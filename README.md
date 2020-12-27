@@ -1,0 +1,2 @@
+# doc
+Latex Project Documentation
