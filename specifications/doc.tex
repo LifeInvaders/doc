@@ -1,0 +1,61 @@
+\documentclass[12pt, letterpaper, twoside]{article}
+\usepackage[utf8]{inputenc}%codification of the document
+
+\usepackage{comment}
+\usepackage{subfiles}
+
+\title{Panic At Tortuga \thanks{From LifeInvaders Production Team}}
+
+\author{
+    KEDJNANE, Harrys\\
+    \texttt{harrys.kedjnane@epita.fr}
+    \and
+    DEVERS, Renaud-Dov\\
+    \texttt{renaud-dov.devers@epita.fr}
+    \and
+    COHEN-SCALI, Julien\\
+    \texttt{julien.cohen-scali@epita.fr}
+    \and
+    DE LA PORTE DES VAUX, Paul\\
+    \texttt{paul.de-la-porte-des-vaux@epita.fr}
+    
+}
+% \date{February 2014}
+
+%Here begins the body of the document
+\begin{document}
+
+\begin{titlepage}
+\maketitle
+\end{titlepage}
+
+\begin{center}
+Nous allons vous présenter notre projet de S2. Notre équipe a choisi de réaliser un jeu vidéo pour le projet du SUP.
+\end{center}
+
+\tableofcontents
+\newpage
+
+
+\section{Présentation du jeu}
+\begin{flushleft}
+Panic At Tortuga est un jeu multijoueur dans lequel les différents joueurs doivent s'entre-éliminer sur une île.
+Le jeu s'inspire de jeux connus : Le premier est le mod "Guess Who ?" où une première équipe doit rechercher et éliminer l'autre équipe qui s'est déguisée en NPC (non-player character) et qui doit imiter les mouvements aléatoires du bot.
+% ee\footnote[1]{Lui même inspiré des jeux Spy Party, Hide&Seek et PropHunt}
+\end{flushleft}
+
+\section{Game Core}
+\subfile{sections/gamecore.tex}
+
+\section{Intelligence Artificielle}
+\subfile{sections/ai.tex}
+
+\section{Multijoueur}
+\subfile{sections/multiplayer.tex}
+
+\section{Modélisation de la carte}
+\subfile{sections/map.tex}
+
+
+\end{document}
+
