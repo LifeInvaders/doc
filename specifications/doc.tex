@@ -22,7 +22,6 @@
 }
 % \date{February 2014}
 
-%Here begins the body of the document
 \begin{document}
 
 \begin{titlepage}
@@ -30,7 +29,10 @@
 \end{titlepage}
 
 \begin{center}
-Nous allons vous présenter notre projet de S2. Notre équipe a choisi de réaliser un jeu vidéo pour le projet du SUP.
+    \textbf{Introduction}
+
+    Nous allons vous présenter notre projet de S2.
+    Notre équipe a choisi de réaliser un jeu vidéo pour le projet de l'Info SUP.
 \end{center}
 
 \tableofcontents
@@ -40,22 +42,49 @@ Nous allons vous présenter notre projet de S2. Notre équipe a choisi de réali
 \section{Présentation du jeu}
 \begin{flushleft}
 Panic At Tortuga est un jeu multijoueur dans lequel les différents joueurs doivent s'entre-éliminer sur une île.
-Le jeu s'inspire de jeux connus : Le premier est le mod "Guess Who ?" où une première équipe doit rechercher et éliminer l'autre équipe qui s'est déguisée en NPC (non-player character) et qui doit imiter les mouvements aléatoires du bot.
-% ee\footnote[1]{Lui même inspiré des jeux Spy Party, Hide&Seek et PropHunt}
+Le jeu s'inspire de jeux connus : Le premier est le mod "Guess Who ?"\footnote{Lui même inspiré de jeux tels que Hide \& Seek, Spy Party ou encore Le Prop Hunt} de Garry's Mod
+    où une première équipe doit rechercher et éliminer l'autre équipe qui s'est déguisée en NPC (Non-Player Character) et qui doit imiter les mouvements aléatoires du bot.
+Le deuxième jeu dont nous nous sommes inspirés est le mode multijoueur d'Assasin's Creed Brotherhood\footnote{Jeu sorti en 2010}.
+Dans ce mode, chacun des joueurs se voit attribuer une cible, ce qui fait que tous les joueurs sont à la fois des traqueurs et traqués.
+
+Notre jeu se passera sur une île tropicale fictive dans les Caraïbes.
+Vous devez vous cacher parmi la foule d'une petite île perdue au beau milieu de l'océan et éliminer votre cible sans être vu.
 \end{flushleft}
 
-\section{Game Core}
-\subfile{sections/gamecore.tex}
+\section{Choix techniques}
 
-\section{Intelligence Artificielle}
+Nous avons décider de réaliser un jeu en 3D sur le moteur cross-platform de Unity Technologies.
+Ce moteur est complet et possède plein de fonctionalités pour créer un environnement jeu fonctionnel.
+
+Nous avons décidé d'acheter un asset contenant de multiples textures, prefabs, objets et personnages sur le thème des pirates et des Caraïbes.\footnote{Voir Partie Coûts de production}
+Nous n'aurons donc pas, sauf quelques rares modèles, besoin de modéliser des mesh sur Blender.
+
+Nous avons choisi d'intégrer l'outil PUN 2 de Photon pour la réalisation du multijoueur et l'interraction entre joueurs.
+
+\newpage
+\section{Répartition des tâches}
+\begin{center}
+    \begin{tabular}{|*{10}{c|}}
+        \hline
+        \textbf{Tâche} & \textbf{Nom} \tabularnewline
+        \hline
+        Création de la carte & Paul\tabularnewline
+        \hline
+        Réalisation du controle du personnage (+Animations) & Renaud-Dov\tabularnewline
+        \hline
+        Implémentation des mécaniques du jeu (game core) & Renaud-Dov et Harrys\tabularnewline
+        \hline
+        Réalisation de l'IA & Renaud-Dov \tabularnewline
+        \hline
+        Implémentation du multijoueur & Harrys et Julien \tabularnewline
+        \hline
+    \end{tabular}
+\end{center}
+
+% \newpage
 \subfile{sections/ai.tex}
 
-\section{Multijoueur}
 \subfile{sections/multiplayer.tex}
 
-\section{Modélisation de la carte}
-\subfile{sections/map.tex}
-
-
+\section{Autres liens utiles}
 \end{document}
-
