@@ -1,12 +1,15 @@
-\documentclass[french, 12pt, letterpaper, twoside]{article}
+\documentclass[french, 12pt, a4paper,twoside]{article}
 
 
 \usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
+% \usepackage[T1]{fontenc}
 \usepackage[french]{babel}
 \usepackage{comment}
+\usepackage{subcaption}
 \usepackage{subfiles}
 \usepackage{graphicx}
+% \usepackage{minted}
+\usepackage{placeins}
 \graphicspath{ {./img/} }
 
 
@@ -48,19 +51,20 @@
 
 \section{Présentation du jeu}
 \begin{flushleft}
-Panic At Tortuga est un jeu multijoueur dans lequel les différents joueurs doivent s'entre-éliminer sur une île.
-Le jeu s'inspire de jeux connus : Le premier est le mod "Guess Who ?"\footnote{Lui même inspiré de jeux tels que Hide \& Seek, Spy Party ou encore Prop Hunt} de Garry's Mod
-    où une première équipe doit rechercher et éliminer l'autre équipe qui s'est déguisée en NPC (Non-Player Character) et qui doit imiter les mouvements aléatoires du bot.
-Le deuxième jeu dont nous nous sommes inspirés est le mode multijoueur d'Assasin's Creed Brotherhood\footnote{Jeu sorti en 2010}.
-Dans ce mode, chacun des joueurs se voit attribuer une cible, ce qui fait que tous les joueurs sont à la fois des traqueurs et traqués.
+    Panic At Tortuga est un jeu multijoueur dans lequel les différents joueurs doivent s'entre-éliminer sur une île.
+    Le jeu s'inspire de jeux connus : Le premier est le mod "Guess Who ?"\footnote{Lui même inspiré de jeux tels que Hide \& Seek, Spy Party ou encore Prop Hunt} de Garry's Mod
+        où une première équipe doit rechercher et éliminer l'autre équipe qui s'est déguisée en NPC (Non-Player Character) et qui doit imiter les mouvements aléatoires du bot.
+    Le deuxième jeu dont nous nous sommes inspirés est le mode multijoueur d'Assasin's Creed Brotherhood\footnote{Jeu sorti en 2010}.
+    Dans ce mode, chacun des joueurs se voit attribuer une cible, ce qui fait que tous les joueurs sont à la fois des traqueurs et traqués.
 
-Notre jeu se passera sur une île tropicale fictive dans les Caraïbes.
-L'objectif est de se cacher parmi la foule d'une petite île perdue au beau milieu de l'océan et d'éliminer votre cible sans être vu.
+    Notre jeu se passera sur une île tropicale fictive dans les Caraïbes.
+    L'objectif est de se cacher parmi la foule d'une petite île perdue au beau milieu de l'océan et d'éliminer votre cible sans être vu.
 \end{flushleft}
+
 
 \section{Choix techniques}
 
-Nous avons décider de réaliser un jeu en 3D sur le moteur cross-platform de Unity Technologies.
+Nous avons décidé de réaliser un jeu en 3D sur le moteur cross-platform de Unity Technologies.
 Ce moteur est complet et possède plein de fonctionalités pour créer un environnement jeu fonctionnel.
 
 Nous avons décidé d'acheter un asset contenant de multiples textures, prefabs, objets et personnages sur le thème des pirates et des Caraïbes.\footnote{Voir Partie Coûts de production}
@@ -68,10 +72,11 @@ Nous n'aurons donc pas, sauf quelques rares modèles, besoin de modéliser des m
 
 Nous avons choisi d'intégrer l'outil PUN 2 de Photon pour la réalisation du multijoueur et l'interraction entre joueurs.
 
-\newpage
+
+% \newpage
 \section{Répartition des tâches}
 \begin{center}
-    \begin{tabular}{|*{2}{c|}}
+    \begin{tabular}{|c||c|}
         \hline
         \textbf{Tâche} & \textbf{Nom} \tabularnewline
         \hline
@@ -89,9 +94,13 @@ Nous avons choisi d'intégrer l'outil PUN 2 de Photon pour la réalisation du mu
 \end{center}
 
 % \newpage
+% \subfile{sections/mouvements.tex}
+% \newpage
 \subfile{sections/ai.tex}
-
+% \newpage
 \subfile{sections/multiplayer.tex}
-
+% \newpage
+% \subfile{sections/costs.tex}
 \section{Autres liens utiles}
+
 \end{document}
