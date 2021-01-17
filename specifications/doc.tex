@@ -18,6 +18,7 @@
 \usepackage{subcaption}
 \usepackage{subfiles}
 \usepackage{graphicx}
+\usepackage{diagbox}
 \usepackage[table,xcdraw]{xcolor}
 % \usepackage{minted}
 \usepackage{placeins}
@@ -157,8 +158,28 @@ Nous avons choisi d'intégrer l'outil PUN 2 de Photon pour la réalisation du mu
     Système de progression                 & \cellcolor[HTML]{F8A102}Harrys     &                                    \\ \hline
     Réalisation et maintenance du site Web & \cellcolor[HTML]{9698ED}Paul       & \multicolumn{1}{c|}{-}             \\ \hline
     \end{tabular}
-    \end{table}
+\end{table}
 
+\begin{table}[!htb]
+    \begin{tabular}{l||lll}
+        \rowcolor[HTML]{000000} 
+        
+        {\color[HTML]{FFFFFF} \backslashbox{\textbf{Tâche}}{\textbf{Soutenance}}} & {\color[HTML]{FFFFFF} \textbf{Soutenance 1}} & {\color[HTML]{FFFFFF} \textbf{Soutenance 2}} & {\color[HTML]{FFFFFF} \textbf{Soutenance 3}} \\
+        \rowcolor[HTML]{FFFFFF} 
+        \textbf{Mouvement} & 50\% & 70\% & 100\% \\
+        \rowcolor[HTML]{C0C0C0}
+        \textbf{Interfaces/HUD} & 40\% & 60\% & 100\% \\
+        \textbf{Cartes} & 40\% & 80\% & 100\% \\
+        \rowcolor[HTML]{C0C0C0} 
+        \textbf{Réseau} &20\% & 50\% & 100\% \\
+        \textbf{IA} & 30\% & 60\% & 100\% \\
+        \rowcolor[HTML]{C0C0C0} 
+        \textbf{Mécaniques de jeu} & 50\% & 70\% & 100\% \\
+        \textbf{Progression} & 20\% & 60\% & 100\% \\
+        \rowcolor[HTML]{C0C0C0}
+        \textbf{Site internet} & 0\% & 100\% & 100\%
+    \end{tabular}
+\end{table}
 \newpage
 \subfile{sections/mouvements.tex}
 \newpage
@@ -174,7 +195,7 @@ Nous avons choisi d'intégrer l'outil PUN 2 de Photon pour la réalisation du mu
 \subfile{sections/multiplayer.tex}
 \newpage
 \subfile{sections/map.tex}
-\newpage
-\subfile{sections/costs.tex}
-\section{Autres liens utiles}
+% \newpage
+% \subfile{sections/costs.tex}
+% \section{Autres liens utiles}
 \end{document}
