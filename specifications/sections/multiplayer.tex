@@ -1,5 +1,27 @@
-\documentclass[../doc.tex]{subfiles}
+\documentclass[french, 12pt]{article}
 
 \begin{document}
     \section{Réalisation du multijoueur}
+Afin de développer le cœur de notre jeu, le système permettant de connecter les joueurs ensemble, nous avons utilisé la framework Photon. Plus précisément Photon 2. \newline
+Selon Wikipédia, "un framework désigne un ensemble de composants logiciels structurels, qui sert à créer les fondations ainsi que les grandes lignes de tout ou d’une partie d'un logiciel". \newline
+Photon a donc intégré à notre projet :
+\begin{itemize}
+    \item Une gestion du nom en jeu (nickname).
+    \item Une géolocalisation des joueurs afin d’optimiser les temps de latence et de les connecter au serveur le plus proche.
+    \item La possibilité de rapprocher des joueurs du monde entier grâce a 4 serveurs à travers pouvant accueillir jusqu’à 20 joueurs chacun.
+\end{itemize}
+	
+
+Par soucis de simplicité, nous résumerons photon en deux parties :
+	\begin{itemize}
+	\item       La partie "\textbf{Client Side}" 
+	\item   	La partie "\textbf{Server side}"
+	\end{itemize}
+	Photon fonctionne, majoritairement, grâce à deux scripts, le \textbf{launcher.cs} ainsi que le \textbf{GameManager.cs}. Le launcher.cs gère la partie Client Side tandis que le GameManager.cs gère la partie Server side. \newline
+	La partie Client side, est étroitement liée avec l’UI (User Interface) puisqu’elle gère toutes les fonctions permettant l’instanciation (la création d’un objet dans une scène) du joueur dans le dans la salle d’attente, puis dans la partie. 
+	 La partie Server side permet à l’administrateur d’avoir des logs des joueurs entrants en sortants de la partie.\newline Ce script permet aussi à l’UI de fonctionner, grâce aux méthodes Disconnect() ou LoadArena(), qui n’ont d’effets que si le joueur est connecté à l’un des serveurs photon, d’où leur intégration dans GameManager.cs.\newline
+	La plus grande difficulté a été de développer une version stable d’un multi-joueur, pour ensuite l’adapter a notre projet.  Il a fallu réadapter les components de notre Player et créer une variante pour chacun des modèles personnalisables possible. 
+
+
+
 \end{document}
