@@ -8,6 +8,9 @@
  top=30mm,
  }
 
+
+\usepackage{helvet}
+
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage[french]{babel}
@@ -22,31 +25,41 @@
 
 
 
-\title{Panic At Tortuga}
+\title{\fontfamily{phv}\selectfont \Huge \textbf{Panic At Tortuga}}
 
 \author{
-    KEDJNANE, Harrys\\
-    \texttt{harrys.kedjnane@epita.fr}
-    \and
-    DEVERS, Renaud-Dov\\
-    \texttt{renaud-dov.devers@epita.fr}
-    \and
-    COHEN-SCALI, Julien\\
-    \texttt{julien.cohen-scali@epita.fr}
-    \and
-    DE LA PORTE DES VAUX, Paul\\
-    \texttt{paul.de-la-porte-des-vaux@epita.fr}
+    \fontfamily{phv}\selectfont
+    \vspace{15pt}
+    Harrys KEDJNANE\\
+    % \texttt{harrys.kedjnane@epita.fr}
+    % \and
+    \vspace{15pt}
+    \fontfamily{phv}\selectfont
+    Renaud-Dov DEVERS\\
+    % \texttt{renaud-dov.devers@epita.fr}
+    % \and
+    \vspace{15pt}
+    \fontfamily{phv}\selectfont
+    Julien COHEN-SCALI\\
+    % \texttt{julien.cohen-scali@epita.fr}
+    % \and
+    \fontfamily{phv}\selectfont
+    Paul DE LA PORTE DES VAUX\\
+    % \texttt{paul.de-la-porte-des-vaux@epita.fr}
     
 }
-% \date{February 2014}
+\date{\fontfamily{phv}\selectfont Janvier 2021}
 
 \begin{document}
 
 \begin{titlepage}
     \maketitle
+    \thispagestyle{empty}
+    % {\fontencoding{T1}\fontfamily{calligra}\selectfont the font is temporarily changed}
+    \vspace{20pt}
     \begin{figure}[hbt!]
         \centering
-        \includegraphics[scale=0.5]{logo_lifeinvaders_carré.png}
+        \includegraphics[scale=0.7]{logo_lifeinvaders_copie.png}
     \end{figure}
 \end{titlepage}
 
@@ -77,8 +90,9 @@
 \textbf{DEVERS Renaud-Dov (Chef de Projet)} \\
 J'adore l'informatique depuis des années, je suis tombé dans la marmite des vieux ordinateurs (Windows 2000 !) à disquette quand j'était petit.
 
-J'aime les travaux et les projets de groupe, en ayant 3 à mon actif, dont le projet d'ISN et celui de SI. J'ai pu réaliser par exemple une application dynamique pour libraires avec une connexion à la database de Google Books.
+J'aime les travaux et les projets de groupe, en ayant trois à mon actif, dont le projet d'ISN et celui de SI. J'ai pu réaliser par exemple une application dynamique pour libraires avec une connexion à la database de Google Books.
 J'y ai appris le rôle d'un chef de groupe, de l'organisation à la responsabilité, je trouve les projets formateurs.
+Ce projet sera donc l'occasion de m'améliorer dans le travail de groupe, pour être prêt pour le monde professionnel.
 \newline
 \textbf{KEDJNANE Harrys} \\
 Avant EPITA, je faisais une PACES et je n’avais jamais codé 
@@ -96,25 +110,25 @@ La création d’un jeu en 3D m’enchante donc, car elle va me permettre d’ex
 Par ailleurs, ayant fait un stage à l’ISART, le C\# et Unity ne me sont pas inconnus. De plus, ce projet est un bon moyen de s’exercer à la Programmation Orientée Objet vue lors derniers cours de programmation,
 ce qui permettra à notre groupe d’améliorer notre code et d’acquérir une méthode bien plus professionnelle, nous préparant à notre vie future.
 La collaboration autour du projet et l’importance de travailler en groupe grâce a git développe en chacun de nous un esprit d’équipe conséquent.
-Ce projet est donc, pour moi, un très bon entrainement pour le développement de projet dans ma vie futur. (mais aussi un très bon moyen de s’amuser)
+Ce projet est donc, pour moi, un très bon entrainement pour le développement de projet dans ma vie futur. (mais aussi un très bon moyen de s’amuser).
 
 \subsection{Identité visuelle}
 Pour créer le logo de notre jeu, nous avons utilisé Photoshop pour faire un logo stylisé, dans les mêmes tons que propose notre jeu.
 \begin{figure}[hbt!]
     \centering
     \includegraphics[scale=0.5]{logo.png}
-    \caption{Vue à la troisième personne}
+    \caption{Logo de Panic At Tortuga}
 \end{figure}
 
 \section{Choix techniques}
 
 Nous avons décidé de réaliser un jeu en 3D sur le moteur cross-platform de Unity Technologies.
-Ce moteur est complet et possède plein de fonctionalités pour créer un environnement jeu fonctionnel.
+Ce moteur est complet et possède plein de fonctionnalités pour créer un environnement jeu fonctionnel.
 
 Nous avons décidé d'acheter un asset contenant de multiples textures, prefabs, objets et personnages sur le thème des pirates et des Caraïbes.\footnote{Voir Partie Coûts de production}
 Nous n'aurons donc pas, sauf quelques rares modèles, besoin de modéliser des mesh sur Blender.
 
-Nous avons choisi d'intégrer l'outil PUN 2 de Photon pour la réalisation du multijoueur et l'interraction entre joueurs.
+Nous avons choisi d'intégrer l'outil PUN 2 de Photon pour la réalisation du multijoueur et l'interaction entre joueurs.
 
 
 \newpage
