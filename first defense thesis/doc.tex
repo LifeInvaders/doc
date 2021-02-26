@@ -86,7 +86,8 @@ Nous avons pu apprendre de nombreuses choses, se dépaser, sortir de notre zone 
     Par exemple, le déplacement du personnage et de la caméra était primordial pour Harrys et Julien qui s'occupaient du multijoueur et nécéssitait d'être livré rapidement.
     Pendant que Renaud-Dov réalisait l'implémentation de ces scripts, Julien et Harrys ont commencé à apprendre comment fonctionnait Photon. Paul s'occupait alors de la map.
 
-    Pour éviter de se perdre dans l'afflu de tâches à réaliser, nous décidé d'utiliser des outils de travail en équipe tel que des kanban (avec Github Projects).\\
+    Pour éviter de se perdre dans l'afflux de tâches à réaliser, nous décidé d'utiliser des
+    outils de travail en équipe tel que des kanban (avec Github Projects).\\
     
     % Photo du kanban
 
@@ -96,8 +97,6 @@ Nous avons pu apprendre de nombreuses choses, se dépaser, sortir de notre zone 
         \caption{Kanban pour la priorisation des tâches sur Github}
     \end{figure}
 
-
-    \textbf{Tableau avec la répartition des tâches}
 
     % ////////////////////////////////////////////////
     % ////////////////////////////////////////////////
@@ -119,8 +118,15 @@ Nous avons pu apprendre de nombreuses choses, se dépaser, sortir de notre zone 
     ils se déplacent de manière aléatoire  vers un point quelconque défini dans une liste de coordonées.
     Aucun NPC n'aura donc le même trajet.\\
 
+    L’outil de navigation est assez poussé, et permet de définir les dimensions des personnages,
+    ainsi que la hauteur de laquelle ils peuvent sauter et les pentes qu’ils peuvent emprunter.
+    Ici, la pente maximale est de 33.4°, mais si ce chiffre avait été plus élevé,
+    les pentes sur la capture d’écran seraient devenues bleues, et les personnages auraient pu
+    monter sans utiliser les escaliers (ce qui n’est évidemment pas le but).
+
+
     Pour rendre ces IA plus humaines, les joueurs peuvent les bousculer et les étourdir en courant vers eux.
-    Ils reprenent leur trajet au bout de quelques secondes.
+    Ils reprenent leur trajet au bout de quelques secondes. Il faudra ainsi, dans les prochaines versions, améliorer la navigation afin que le chemin emprunté ne soit pas toujours le plus court. 
 
 
     Plusieurs problèmes se posent actuellement avec l'utilisation des NavMesh:
@@ -132,6 +138,7 @@ Nous avons pu apprendre de nombreuses choses, se dépaser, sortir de notre zone 
             \caption{Porte fermée après le passage d'un joueur}
         \end{figure}
     \end{itemize}
+
 
     % ////////////////////////////////////////////////
     % ////////////////////////////////////////////////
@@ -191,15 +198,15 @@ Nous avons pu apprendre de nombreuses choses, se dépaser, sortir de notre zone 
             \begin{figure}[hbt!]
                 \centering
                 \begin{subfigure}[b]{0.3\textwidth}
-                    \includegraphics[scale=0.1]{white_outline.png} 
-                    \caption{}
+                    \includegraphics[scale=0.5]{white_outline.png} 
+                    \caption{Personnage au centre de l'écran en surbrillance}
                 \end{subfigure}
                 \hspace{150pt}
                 \begin{subfigure}[b]{0.3\textwidth}
-                    \includegraphics[scale=0.5]{yellow_outline.png} 
-                    \caption{Animation de course sur un personnage}
+                    \includegraphics[scale=0.8]{yellow_outline.png} 
+                    \caption{Personnage sélectionné et verrouilé}
                 \end{subfigure}
-                \caption{Animations de Mixamo vers Unity}
+                \caption{Système de verrouilage}
             \end{figure}
 
 
