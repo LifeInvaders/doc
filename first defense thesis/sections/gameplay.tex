@@ -40,6 +40,18 @@
             Il a fallu editer certains bout de code pour les rendre compatible; heureusement, la migration ne fut pas très longue après avoir compris son fonctionnement.
 
             Il est donc actuellement possible de jouer au clavier/souris ou à la manette (pas les deux à fois).
+            
+        \subsubsection{Attribution des cibles}
+            
+            C'est Harrys qui a réalisé le script permettant l'attribution des cibles, qui fait usage des méthodes RPC (communication inter-client par l'intermédiaire d'un serveur). Le "MasterClient", un client qui est désigné comme chaque salle pour faire office de maître de jeu, est celui qui désigne la cible de chaque joueur. Il communique ensuite à chacun des clients présent dans la salle sa cible désigné. Cette attribution se fait de façon aléatoire, mais selon certaines règles:
+                
+                -Un joueur ne peut évidemment pas être sa propre cible
+                -Deux joueurs ne peuvent pas être la cible l'un de l'autre
+                 Cela permet une plus grande interaction entre les joueurs et pas simplement des scénarios en "1 contre 1".
+                -Plusieurs joueurs ne peuvent pas avoir la même cible.
+                
+            Cependant même si ce script est fonctionnel, il n'a pas encore été implémenté. En somme, l'attribution d'une cible n'a pas encore grande utilité. Le système d'élimination de la cible fera l'objet d'un travail important pour la prochaine soutenance.
+        
         
         \subsubsection{Système de verrouilage}
 
