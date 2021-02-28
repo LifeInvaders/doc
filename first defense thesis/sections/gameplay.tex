@@ -19,13 +19,16 @@
             Elles se ferment quand le joueur passe dessus en courant
             et se rouvrent au bout de quelques secondes.
 
-            \begin{figure}[hbt!]
+            \begin{figure}[ht]
                 \centering
                 \includegraphics{doors_closed.png}
                 \caption{Porte fermée après le passage d'un joueur}
             \end{figure}
 
+            Ces interractions environnementales ont été réalisé par Renaud-Dov.
+
         \subsubsection{Déplacement du personnage}
+            C'est Renaud-Dov qui a réalisé les contrôles de déplacement du personnage:
         
             Tout jeu est très rapidement limité par la capacité de déplacement du personnage et sa vitesse.
             Nous avons donc réalisé un script de déplacement qui permet au joueur de marcher, courir, sauter et grimper aux échelles.\\
@@ -54,7 +57,7 @@
         
         
         \subsubsection{Système de verrouilage}
-
+            
             Le système qui attribue des cibles à chaque joueur n'est pas entièrement implémenté, mais le joueur peut déjà tuer une cible, qu'elle soit la bonne ou non.
             Pour cela, il passe en mode verrouilage, et les personnages pointés par le viseur surbrillent.
             Pour les sélectionner, un coup de molette suffit, et le contour devient alors jaune, pour indiquer que la cible est verouillée.
@@ -70,6 +73,11 @@
                 \begin{subfigure}[b]{0.3\textwidth}
                     \includegraphics[scale=0.8]{yellow_outline.png} 
                     \caption{Personnage sélectionné et verrouilé}
+                \end{subfigure}
+
+                \begin{subfigure}[b]{0.3\textwidth}
+                    \includegraphics[scale=0.4]{death.png} 
+                    \caption{Disparition des corps après mort}
                 \end{subfigure}
                 \caption{Système de verrouilage}
             \end{figure}
