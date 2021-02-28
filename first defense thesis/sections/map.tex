@@ -39,36 +39,3 @@ marchés animés. Les tonnelles et les nombreuses lanternes rendent l’environn
 plus chaleureux, et les arcades, dotées de portes qui se ferment lorsqu’un joueur 
 les passe en courant, ajoutent une mécanique de fuite au jeu. L’organisation du 
 village se fait autour de la place de l’église, qui fait office de place du marché.\\
-
-
-Les personnages non-joueurs (NPC) doivent être mus par une intelligence artificielle. 
-En outre, ils doivent se déplacer de façon cohérente sur la carte (pas de traversées 
-de murs, ni de téléportation par exemple). Le pathfinding intégré à Unity nous a 
-donc tout naturellement paru la solution conciliant le mieux efficacité et 
-simplicité. Il permet de définir une zone où les NPC peuvent se déplacer, et 
-calcule le meilleur itinéraire pour aller d’un point à un autre sans quitter cette zone.
-
-
-\begin{figure}[hbt!]
-    \centering
-    \includegraphics[scale=0.43]{navmesh.png}
-    \caption{Le « Navmesh », zone où peuvent se déplacer les NPC}
-\end{figure}
-
-L’outil de navigation est assez poussé, et permet de définir les dimensions des 
-personnages, ainsi que la hauteur de laquelle ils peuvent sauter et les pentes 
-qu’ils peuvent emprunter. Ici, la pente maximale est de 33.4°, mais si ce chiffre 
-avait été plus élevé, les pentes sur la capture d’écran seraient devenues bleues, 
-et les personnages auraient pu monter sans utiliser les escaliers (ce qui n’est 
-évidemment pas le but).
-Les joueurs se déplacent donc entre deux points (représentés sur la scène par des 
-sphères grises) choisi aléatoirement parmi tous les points de la carte. Un fois 
-le point atteint, ils en choisissent un nouveau et s’y rendent. Enfin, si un NPC 
-est heurté par un joueur en train de courir, il est étourdi pendant trois secondes, 
-puis se relève et repart. \\
-Toute cette partie des NPC est déjà fonctionnelle ; cependant l’intelligence très 
-limitée de ces derniers pose quelques problèmes, notamment au niveau des escaliers 
-où ils se massent et se gênent mutuellement. Il faudra ainsi, dans les prochaines 
-versions, améliorer la navigation afin que le chemin emprunté ne soit pas toujours 
-le plus court. 
-
