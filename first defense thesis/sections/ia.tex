@@ -5,13 +5,13 @@ il nous fallait créer des IA se déplacant dans la ville.
 Pour cela, nous avons décider d'utiliser des NavMesh pour créer des zones où les 
 NPC peuvent se balader d'un point A vers un point B.
 Pour ne pas rendre leur comportement linéaire et sans saveur,
-ils se déplacent de manière aléatoire  vers un point quelconque défini dans une liste de coordonées.
+ils se déplacent de manière aléatoire  vers un point quelconque défini dans une liste de coordonnées.
 Aucun NPC n'aura donc le même trajet.\\
 
 L’outil de navigation est assez poussé, et permet de définir les dimensions des personnages,
 ainsi que la hauteur de laquelle ils peuvent sauter et les pentes qu’ils peuvent emprunter.
 Ici, la pente maximale est de 33.4°, mais si ce chiffre avait été plus élevé,
-les pentes sur la capture d’écran seraient devenues bleues, et les personnages auraient pu
+les pentes seraient devenues bleues\footnote{Voir fugure 3}, et les personnages auraient pu
 monter sans utiliser les escaliers (ce qui n’est évidemment pas le but).
 
 
@@ -19,13 +19,8 @@ Pour rendre ces IA plus humaines, les joueurs peuvent les bousculer et les étou
 Ils reprenent leur trajet au bout de quelques secondes. Il faudra ainsi, dans les prochaines versions, améliorer la navigation afin que le chemin emprunté ne soit pas toujours le plus court. 
 \newline
 
-Plusieurs problèmes se posent actuellement avec l'utilisation des NavMesh:
-\begin{itemize}
-    \item L'IA calcule le chemin le plus court, et n'essaie pas de se déplacer sur le côté si d'autres IA marchent dans le sens contraire.
-    Par exemple, si l'ont met deux escaliers cote à côte, toutes les IA vont prendre l'escalier le plus proche et donc se bloquer.\\
-    \begin{figure}[hbt!]
+\begin{figure}[h!]
         \centering
         \includegraphics[scale=0.3]{ia_stairs_bug.png}
         \caption{Problème rencontré lorsque de nombreuses IA vont au même endroit}
-    \end{figure}
-\end{itemize}
+\end{figure}

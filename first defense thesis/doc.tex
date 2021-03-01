@@ -25,7 +25,7 @@
 
 \usepackage{fancyhdr}
 
-% \setcounter{secnumdepth}{5}
+\setcounter{secnumdepth}{4}
 
 \graphicspath{ {./img/} }
 
@@ -69,7 +69,7 @@
 \section{Introduction}
 
 Panic At Tortuga est un jeu orienté multijoueur. Mais quel genre de est-ce ?
-Il s'agit du jeu s'inspirant de mécaniques de jeux divers, 
+Il s'agit d'un jeu s'inspirant de mécaniques de jeux divers, 
 les principaux étant Assassin's Creed (son mode multi) et d'autres jeux comme "Guess Who?".
 
 Vous et d'autres joueurs êtes lachés sur la petite île de Tortuga, une île où la population vit paisiblement.
@@ -92,7 +92,7 @@ Nous avons pu apprendre de nombreuses choses, se dépaser, sortir de notre zone 
     Par exemple, le déplacement du personnage et de la caméra était primordial pour Harrys et Julien qui s'occupaient du multijoueur et nécéssitait d'être livré rapidement.
     Pendant que Renaud-Dov réalisait l'implémentation de ces scripts, Julien et Harrys ont commencé à apprendre comment fonctionnait Photon. Paul s'occupait alors de la map.
 
-    Pour éviter de se perdre dans l'afflux de tâches à réaliser, nous décidé d'utiliser des
+    Pour éviter de se perdre dans la masse de tâches à réaliser, nous décidé d'utiliser des
     outils de travail en équipe tel que des kanban (avec Github Projects).\\
     
     % Photo du kanban
@@ -115,19 +115,18 @@ Nous avons pu apprendre de nombreuses choses, se dépaser, sortir de notre zone 
     % ////////////////////////////////////////////////
 
     \subfile{sections/ia.tex}
-
-
-    % ////////////////////////////////////////////////
-    % ////////////////////////////////////////////////
-    % ////////////////////////////////////////////////
-
-    \subfile{sections/gameplay.tex}
     \newpage
 
     % ////////////////////////////////////////////////
     % ////////////////////////////////////////////////
     % ////////////////////////////////////////////////
 
+    \subfile{sections/gameplay.tex}
+
+    % ////////////////////////////////////////////////
+    % ////////////////////////////////////////////////
+    % ////////////////////////////////////////////////
+    \newpage
     \subsection{Interface}
     
     Les interfaces sont une partie importante de tout jeu. Elles permettent de donner au joueur plus de contrôle sur son expérience et de présenter les informations nécessaires de façon claire, facilement accessible et si possible esthétique. Un progrès important a été fait quant à la création d'interfaces.
@@ -136,13 +135,15 @@ Nous avons pu apprendre de nombreuses choses, se dépaser, sortir de notre zone 
         \subfile{sections/hud.tex} % sous-partie dans HUD.tex
         \subsubsection{Menu principal}
         \subfile{sections/menus.tex}
-        \newpage
 
 
     % ////////////////////////////////////////////////
     % ////////////////////////////////////////////////
     % //////////////////////////////////////////////// 
+    
     \subfile{sections/map.tex}
+
+    \newpage
     % ////////////////////////////////////////////////
     % ////////////////////////////////////////////////
     % //////////////////////////////////////////////// 

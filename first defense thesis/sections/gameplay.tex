@@ -39,7 +39,7 @@
                 \item Paramétrer des périphériques autre que le clavier/souris est compliqué. Il faudrait avoir des scripts différents pour chaque périphérique, et donc des prefabs différents
             \end{itemize}
             C'est pour cette raison que nous avons migré vers le New Input System.
-            Celui ci est ergonomique, multiplateformes et permet l'utilisation de différents périphériques, comme la manette ou le clavier par exemple.
+            Celui ci est ergonomique, multiplateforme et permet l'utilisation de périphériques divers, comme la manette ou le clavier par exemple.
             Certains scripts ont dû être modifiés pour devenir compatibles avec ce système.
 
             Il est donc actuellement possible de jouer au clavier/souris ou à la manette (pas les deux à fois).
@@ -47,10 +47,11 @@
         \subsubsection{Attribution des cibles}
             
             Harrys a réalisé le script permettant l'attribution des cibles, qui utilise des méthodes RPC (communication inter-clients par l'intermédiaire d'un serveur). Le "MasterClient", un client qui est désigné dans chaque salle pour faire office de maître de jeu, est celui qui séléctionne la cible de chaque joueur. Il communique ensuite à chacun des clients présents dans la salle sa cible désignée. Cette attribution se fait de façon aléatoire, mais selon certaines règles:
-                
-                -Un joueur ne peut (évidemment) pas être sa propre cible
-                -Deux joueurs ne peuvent pas être la cible l'un de l'autre (Cela permet une plus grande interaction entre les joueurs et pas simplement des scénarios en "1 contre 1").
-                -Plusieurs joueurs ne peuvent pas avoir la même cible.
+            \begin{itemize}
+                \item Un joueur ne peut (évidemment) pas être sa propre cible
+                \item Deux joueurs ne peuvent pas être la cible l'un de l'autre (Cela permet une plus grande interaction entre les joueurs et pas simplement des scénarios en "1 contre 1").
+                \item Plusieurs joueurs ne peuvent pas avoir la même cible.
+            \end{itemize}
                 
             Cependant même si ce script est fonctionnel, il n'a pas encore été implémenté. 
             Le système d'élimination de la cible fera l'objet d'un travail important pour la prochaine soutenance.
@@ -61,7 +62,7 @@
             Le système qui attribue des cibles à chaque joueur n'est pas entièrement implémenté, mais le joueur peut déjà tuer une cible, qu'elle soit la bonne ou non.
             Pour cela, il passe en mode verrouilage, et les personnages pointés par le viseur surbrillent.
             Pour les sélectionner, un coup de molette suffit, et le contour devient alors jaune, pour indiquer que la cible est verouillée.
-            Il suffit alors d'être à moins d'un mètre pour l'éliminer.
+            Il suffit alors d'être à moins d'un mètre pour l'éliminer\footnote{Voir fig 6}.
 
             \begin{figure}[hbt!]
                 \centering
@@ -82,11 +83,12 @@
                 \caption{Système de verrouilage}
             \end{figure}
 
-            Pour le matériau qui fait disparaitre les corps, nous avons créé manuellement un shader avec l'outil Shader Graph de Unity.
+            Pour le matériau qui fait disparaitre les corps, nous avons créé manuellement un shader avec l'outil Shader Graph de Unity\footnote{Voir fig 7}.
 
-            Nous pouvons donc créer des shaders personalisés et dynamique (exemple utilisation du temps)
+            Nous pouvons donc créer des shaders personalisés et dynamique (avec comme exemple l'utilisation du temps).
 
             \begin{figure}[hbt!]
                 \centering
                 \includegraphics[scale=0.3]{dissolve_shader.png} 
+                \caption{Vue du shader créé depuis Shader Graph}
             \end{figure}
