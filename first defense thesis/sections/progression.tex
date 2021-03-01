@@ -1,8 +1,26 @@
 \subsection{Système de progression}
-    Le système de progression, qui reste pour l'instant une tâche secondaire, a tout de même vu un avancement satisfaisant. En effet même s'il n'y a pas encore de mécanique de jeu permettant à ce système de prendre sens, l'objectif principal pour cette première soutenance a été réalisé: le système de sauvegarde.
+    Le système de progression, qui reste pour l'instant une tâche secondaire, a tout de même convenablement avancé. En effet même s'il n'y a pas 
+    encore de mécanique de jeu permettant à ce système de prendre sens, l'objectif principal pour cette première soutenance a été réalisé: le système 
+    de sauvegarde.
+
     \subsubsection{Système de sauvegarde}
-    Un système de sauvegarde complet a été implémenté. Une classe "PlayerDatabase" a été créé et permet de stocker l'ensemble des variables que nous souhaitons sauvegarder. Ce système est utilisé non seulement pour sauvegarder la progression du joueur, mais il se trouve qu'il a également une grande utilité pour sauvegarder d'autres paramètres, comme par exemple la persistence du changement des contrôles effectués par le joueur (cf. menu d'accueil). Il n'existe qu'une seule instance de cette classe pour tout le jeu (singleton). Cette instance est sérialisée(processus permettant de convertir l'information dans un autre format, ici dans le but de la stocker, permettant ainsi sa persistance) puis sauvegardée dans un fichier. Au lancement du jeu, ce fichier est désérialisé(processus inverse de la sérialisation) est l'instance récupérée remplace donc l'instance unique présente en jeu. Il est important de faire cette démarche le plus tôt possible, afin que le chargement de l'instance soit faite avant toute tentative d'accés à cette dernière. Il faut également faire attention à sauvegarder régulièrement, notamment lors de la modification de l'instance. 
+    Un système de sauvegarde complet a été implémenté. Une classe "PlayerDatabase" a été créée et permet de stocker l'ensemble des variables que nous 
+    souhaitons sauvegarder. Ce système est utilisé non seulement pour sauvegarder la progression du joueur, mais il se trouve qu'il a également une grande 
+    utilité pour sauvegarder d'autres paramètres, comme par exemple la persistence du changement des contrôles effectués par le joueur (cf. menu d'accueil). 
+    Il n'existe qu'une seule instance de cette classe pour tout le jeu (singleton). Cette instance est sérialisée(processus permettant de convertir 
+    l'information dans un autre format, ici dans le but de la stocker, permettant ainsi sa persistance) puis sauvegardée dans un fichier. Au lancement du 
+    jeu, ce fichier est désérialisé(processus inverse de la sérialisation) est l'instance récupérée remplace donc l'instance unique présente en jeu. Il est 
+    important de faire cette démarche le plus tôt possible, afin que le chargement de l'instance soit faite avant toute tentative d'accés à cette dernière. 
+    Il faut également faire attention à sauvegarder régulièrement, notamment lors de la modification de l'instance.
+
     \subsubsection{Contenu débloquable}
-    Même si le système de progression n'a pas encore été créé, une réflexion sur la "récompense" de ce système de progression a eu lieu. Il serait donc intéressant d'explorer la possibilité de débloquer des effets "cosmétique" qui serait visible dans le lobby\footnote{Cf. Multijoueur}. Un système de customisation de personnage a été créé, et nous avons pour objectif de permettre au joueur de débloquer ces éléments de customisation.
+    Même si le système de progression n'a pas encore été créé, nous avons déjà réfléchi sur la "récompense" de ce système de progression. Il serait donc 
+    intéressant d'explorer la possibilité de débloquer des effets "cosmétiques" qui serait visible dans le lobby\footnote{Cf. Multijoueur}. Un système de 
+    customisation de personnage a été créé, et nous avons pour objectif de permettre au joueur de débloquer ces éléments de customisation.
+
     \subsubsection{Système de customisation}
-    Même si cette mécanique est encore basique, le joueur a la possibilité de choisir l'apparrence de son personnage dans le menu d'accueil\footnote{Cf. Menu d'accueil}. Cette dernière sera vu des autres joueurs du lobby. Le fonctionnement est le suivant: chaque caractéristique est associée à une variable. Ces variables composent un code unique associé à une combinaison spécifique qui sera alors affiché. De plus ces variables sont sauvegardés et le choix est donc persistant au redémarrage. D'ici la fin du projet, l'objectif est de bloquer l'accès à certains éléments de customisation, et de permettre au joueur de les débloquer grâce à sa progression.
+    Même si cette mécanique est encore basique, le joueur a la possibilité de choisir l'apparence de son personnage dans le menu d'accueil
+    \footnote{Cf. Menu d'accueil}. Cette dernière sera vue des autres joueurs du lobby. Le fonctionnement est le suivant: chaque caractéristique est associée 
+    à une variable. Ces variables composent un code unique associé à une combinaison spécifique qui sera alors affichée. De plus, ces variables sont 
+    sauvegardés et le choix est persistant (sauvegardé dans un fichier). Avant la fin du projet, l'objectif est de bloquer l'accès à certains éléments de 
+    customisation, et de permettre au joueur de les débloquer grâce à sa progression.
