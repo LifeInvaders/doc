@@ -1,5 +1,8 @@
 \subsection{Réseau}
 
+    \subsubsection{Connexion aux serveurs Photon}
+        Avant toute chose, il est essentiel de pouvoir connecter le joueur à un serveur de jeu. Grâce à Photon, qui fournit non seulement un serveur gratuit d'une capacité de 20 joueurs simultanés, mais également un accés facile à ce dernier grâce à son API, connecter les joueurs au serveur est chose aisé. Il suffit d'un appel de méthode pour connecter et déconnecter le joueur. Simple et efficace.
+
     \subsubsection{Création d'une salle}
         Photon se base sur un système de salle. Ces dernières permettent aux joueurs présent à l'intérieur de communiquer entre eux. Il est actuellement possible de créer ainsi que de rejoindre une salle. Ces deux processus se font automatiquement, sans effort du joueur, mais il est prévu de donner un plus grand contrôle sur ce système aux clients. En effet, il suffit d'appuyer sur un bouton pour tenter de rejoindre une salle. Si aucune salle est disponible, alors le client en crée une qui se rend disponible aux autres joueurs. Ce système a été implémenté par Julien et Harrys.
     \subsubsection{Instantiation et synchronisation}
