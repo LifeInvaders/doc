@@ -1,0 +1,31 @@
+\subsection{Gameplay}
+
+\subsubsection{Système de verrouillage}
+
+Pour tuer un personnage (joueur ou NPC),
+nous avons ajouté un système de verrouillage. Celui-ci est assez pratique, lorsque l'on passe dans ce mode, l'écran change,
+un effet réalisé grâce au post processing de Unity permet de donner un effet sépia/vieux films\footnote{voir Effets Graphiques}.
+Un contour blanc autour des personnages visés au centre de l'écran permettent voir quel personnage va être sélectionné.
+
+Une fois sélectionné et lorsque le joueur est proche de sa cible, il peut alors l'éliminer.
+
+L'effet a demandé de créer plusieurs overlay de caméra, afin d'avoir un effet graphique
+appliqué uniquement sur certains layers, et de les surperposer les unes sur les autres. 
+
+Nous avons fourni un vrai travail sur les différentes animations de morts des personnages.
+Lors de sa réalisation, un problème s'est posé : Il fallait que les animations de deux GameObject (ici le joueur qui tue et le NPC/joueur tué) 
+soient synchronisées et très précises spatialement. Après avoir regardé plusieurs types de solutions, nous nous sommes tournés vers un outil préintégré nommé Timeline.
+Ce dernier permet de réaliser des clips vidéos.
+
+Voici donc comment nous avons intégré les timelines :
+\newline
+Des faux personnages jouant les animations sont ajoutés sur la cartes à la position et rotation du tueur.
+On masque le tueur et le tué de la carte.
+On change le mesh et le matériau de chaque personnage de la timeline pour qu'il corresponde au tueur et au
+personnage tué.
+
+Une fois l'animation terminé, un signal est envoyé à script qui réaffiche alors le joueur qui était masqué.
+
+Le personnage tué disparait de la carte au bout d'une dizaine de secondes avec un shader fait avec Shader Graph.
+
+\subsubsection{}

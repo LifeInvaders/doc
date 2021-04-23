@@ -1,0 +1,48 @@
+
+\begin{document}
+\subsection{Intelligence Artificielle}
+    \subsubsection{NPC Zone \& Système de déplacement}
+    Nous avons essayé plusieurs types de déplacement pour les IA.
+    Nous avons créé des NPC zones qui permettent de créer des quartiers
+    où les NPC peuvent se balader librement dans la zone.
+    Si un NPC est tué dans la zone, un nouveau apparaît avec un effet visuel approprié.
+
+    Pour le système de déplacement de l'IA,
+    nous avons essayé plusieurs algorithmes différents :\newline
+    
+    \begin{itemize}
+        \item Le premier algorithme que nous avions montré lors de la première soutenance
+        était un déplacement vers un élément alétoire d'une liste de coordonées prédéfinie.
+        Le tracé était vu et revu, et de ce fait, trop prévisible.
+        De plus, si un personnage allait d'un point A vers un point B, et un autre de B vers A,
+        alors ils allaient prendre le même chemin et donc se croiser (face à face) et finir coincé.
+        \newline
+        \item  Nous avons donc décidé de rajouter plus d'alétoire dans leurs déplacements.
+        Les IA cherchent une destination "accessible" dans un rayon proche.
+        Le problème était que la librairie Unity AI intégrée cherche un chemin complet ou partiel.
+        Le rendu final montrait des personnages qui finissaient toujours par être attiré par les bordures de la carte.
+        \newline
+
+        \item    Le dernier système intégré changait un point.
+        Au lieu de chercher une destination proche de lui, il cherchait une destination dans le rayon
+        d'action de la NPC zone.
+    
+    \end{itemize}
+    
+   
+    
+    \subsubsection{Evenements}
+
+    Afin de rendre les IA moins scriptées, nous avons ajouté des événements alétoire.
+    
+    Il y a des zones de discussions où les NPC peuvent aller.
+    Les joueurs peuvent interagir avec et se fondre dans la discussion, pour se cacher.
+
+    % TODO : FINISH THIS PART
+
+    
+
+
+
+
+\end{document}
