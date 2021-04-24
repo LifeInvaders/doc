@@ -21,7 +21,8 @@
         mais également difficile dû au grand nombre d'IA présentes sur la map.
 
         Tout d'abord, il faut synchroniser l'apparition des PNJs. Encore une fois, c'est le Master Client qui instancie les personnages
-        grâce à Photon. Ils sont donc au départ placé de la même façon pour tout les joueurs.
+        grâce à Photon. Ils sont donc au départ placé de la même façon pour tout les joueurs. Il faut également synchroniser leur apparence.
+        Encore une fois, cette dernière est déterminé par le Master Client puis partagé aux autres joueurs grâce à une méthode RPC.
 
         Mais les problèmes commencent au moment de synchroniser le mouvement des IA. Le système qui a été créé par Dov permet
         à l'IA de se déplacer sur la map, il faut maintenant que ce mouvement soit propagé de façon quasi-identique à tout les joueurs.
@@ -41,14 +42,18 @@
             par le Master Client. Ce système permet d'avoir une synchronisation satisfaisante des déplacement et une utilisation minime de la bande passante.
 
     \subsubsection{Synchronisation des assassinats et des morts}
-            Une dernière partie de la synchronisation inclue celle des évènement de mort, pour les joueurs ainsi
-            que les IA. Pour celà, il a été décidé d'utiliser le sytème d'Event Photon. Auparavant, la synchronisation de méthodes
-            passait par l'utilisation de Photon View et de RPC. Mais le système de kill/death demande une propagation plus importante
-            de l'évènement, car plusieurs systèmes différents doivent y réagir. C'est la que Photon rentre en jeu.
+        Une dernière partie de la synchronisation inclue celle des évènement de mort, pour les joueurs ainsi
+        que les IA. Pour celà, il a été décidé d'utiliser le sytème d'Event Photon. Auparavant, la synchronisation de méthodes
+        passait par l'utilisation de Photon View et de RPC. Mais le système de kill/death demande une propagation plus importante
+        de l'évènement, car plusieurs systèmes différents doivent y réagir. C'est la que Photon rentre en jeu.
 
-            En effet, ce dernier permet de synchroniser le déclenchement d'évènement. Pour celà, on utilise la méthode RaiseEvent ainsi
-            qu'un code représentant notre évènement. Cette action appelle la méthode callback OnEvent, dans laquel il suffit d'associer le
-            code de l'évènement à une méthode. Ainsi, à la mort d'un joueur, le tueur déclenche l'évènement mort en indiquant l'identité du
-            joueur tué. Chaque joueur reçoit cette évènement et peut déterminer, par exemple, si le joueur mort est lui-même, ou bien si un
-            autre joueur a tué sa cible... En bref, chaque client prend une décision en fonction de l'information reçu
-            Les détails du système de morts sont dans la partie gameplay.
+        En effet, ce dernier permet de synchroniser le déclenchement d'évènement. Pour celà, on utilise la méthode RaiseEvent ainsi
+        qu'un code représentant notre évènement. Cette action appelle la méthode callback OnEvent, dans laquel il suffit d'associer le
+        code de l'évènement à une méthode. Ainsi, à la mort d'un joueur, le tueur déclenche l'évènement mort en indiquant l'identité du
+        joueur tué. Chaque joueur reçoit cette évènement et peut déterminer, par exemple, si le joueur mort est lui-même, ou bien si un
+        autre joueur a tué sa cible... En bref, chaque client prend une décision en fonction de l'information reçu
+        Les détails du système de morts sont dans la partie gameplay.
+
+    \subsubsection{Synchronisation du déroulé de partie}
+        De la même manière, un système d'event a été mis en place permettant de synchroniser les différentes étapes du jeu.
+
