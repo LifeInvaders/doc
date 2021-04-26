@@ -1,6 +1,7 @@
 \subsection{Réseau}
 
     \subsubsection{Transition du Lobby vers le jeu}
+    
         Un système a été mis en place permettant le passage de la scène de lobby vers la scène de jeu.
         Ce système fonctionne a l'aide d'un timer, qui est synchronisé entre tout les joueurs, y compris ceux
         rejoignant le lobby après son lancement. Ce timer ne se lance uniquement après que le serveur soit à moitié
@@ -17,23 +18,28 @@
         morts.
 
     \subsubsection{Synchronisation de l'IA}
-        La grande difficulté niveau multijoueur, c'est la synchronisation des PNJSCelà est une tâche important dû à la nature du jeu, 
+
+        La grande difficulté du système multijoueur est la synchronisation des PNJs. En effet, c'est une tâche important dû à la nature du jeu, 
         mais également difficile dû au grand nombre d'IA présentes sur la map.
+
+        Tout d'abord, il faut synchroniser l'apparition des PNJs. Le Master Client instancie les personnages grâce à Photon ; ils sont donc au départ 
+        placés et visibles de la même façon pour tout les joueurs.
 
         Tout d'abord, il faut synchroniser l'apparition des PNJs. Encore une fois, c'est le Master Client qui instancie les personnages
         grâce à Photon. Ils sont donc au départ placé de la même façon pour tout les joueurs. Il faut également synchroniser leur apparence.
         Encore une fois, cette dernière est déterminé par le Master Client puis partagé aux autres joueurs grâce à une méthode RPC.
 
+
         Mais les problèmes commencent au moment de synchroniser le mouvement des IA. Le système qui a été créé par Dov permet
         à l'IA de se déplacer sur la map, il faut maintenant que ce mouvement soit propagé de façon quasi-identique à tout les joueurs.
-        Pour celà, plusieurs méthodes ont été envisagés:
+        Pour cela, plusieurs méthodes ont été envisagées:
 
             -L'utilisation de Photon Transform View, comme pour les joueurs. Ce système a vite montré ses limites, car inadapté à la synchronisation
             d'un grand nombre d'objets, fonctionant sur la base d'un envoi pseudo-continu d'informations. Ainsi de nombreux problèmes apparaissaient,
             et la synchronisation des mouvement en a souffert. 
 
             -Calcul de chemin client-side à partir du même point. L'idée est la suivante: le master client calcule un point, qui est la destination
-            de l'IA et la partage aux autres joueurs. Puis chaque joueur calcule le chemin pris par l'IA pour y arriver. Celà réduit considérablement la
+            de l'IA, et la partage aux autres joueurs. Puis chaque joueur calcule le chemin pris par l'IA pour y arriver. Cela réduit considérablement la
             quantité d'information échangée, mais un autre problème se pose: le calcul de chemin pour les NavMesh Agents n'est pas déterministe. Ainsi le
             chemin calculé par chaque client à partir du même point n'est pas le même, ce qui entraîne également une désynchronisation de la position.
 
@@ -42,6 +48,19 @@
             par le Master Client. Ce système permet d'avoir une synchronisation satisfaisante des déplacement et une utilisation minime de la bande passante.
 
     \subsubsection{Synchronisation des assassinats et des morts}
+
+        Une dernière partie de la synchronisation inclue celle des évènement de mort, pour les joueurs ainsi
+        que les IA. Pour cela, il a été décidé d'utiliser le sytème d'Event Photon. Auparavant, la synchronisation de méthodes
+        passait par l'utilisation de Photon View et de RPC. Mais le système de kill/death demande une propagation plus importante
+        de l'évènement, car plusieurs systèmes différents doivent y réagir. C'est là que Photon rentre en jeu.
+
+        En effet, ce dernier permet de synchroniser le déclenchement d'évènements. Pour cela, on utilise la méthode RaiseEvent ainsi
+        qu'un code représentant notre évènement. Cette action appelle la méthode callback OnEvent, dans laquel il suffit d'associer le
+        code de l'évènement à une méthode. Ainsi, à la mort d'un joueur, le tueur déclenche l'évènement mort en indiquant l'identité du
+        joueur tué. Chaque joueur reçoit cet évènement et peut déterminer, par exemple, si le joueur mort est lui-même, ou bien si un
+        autre joueur a tué sa cible... En bref, chaque client prend une décision en fonction de l'information reçue.
+        Les détails du système de morts sont dans la partie gameplay.
+
         Une dernière partie de la synchronisation inclue celle des évènement de mort, pour les joueurs ainsi
         que les IA. Pour celà, il a été décidé d'utiliser le sytème d'Event Photon. Auparavant, la synchronisation de méthodes
         passait par l'utilisation de Photon View et de RPC. Mais le système de kill/death demande une propagation plus importante
