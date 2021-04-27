@@ -58,9 +58,9 @@ fait une transition de l'état initial vers l'état final.
 \FloatBarrier
 
 Le problème que nous avions rencontré était que lorsque nous appliquions le matériau avec le shader,
-les paramètres de l'instance du shader sur le matériau était communs. Résultat : lorsque un premier personnage mourrait puis dans la foulée un autre mourait également,
-alors le premier mort recommencait l'animation de transition en plus de changer de couleur de vêtements plus de peau.
-La solution fut toute simple, il nous a suffit en runtime de créer un nouveau matériau et d'appliquer les paramètres du matériau dans le script.
+les paramètres de l'instance du shader sur le matériau était communs. Résultat : lorsqu'un premier personnage mourrait juste après un autre, 
+le premier mort recommencait l'animation de transition en plus de changer de couleur de vêtements et de peau.
+La solution fut toute simple, il nous a suffit de créer un nouveau matériau et d'appliquer les paramètres du matériau dans le script.
 
 % \subsubsection{Radar}
 
