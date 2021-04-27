@@ -4,11 +4,22 @@
     
         Un système a été mis en place permettant le passage de la scène de lobby vers la scène de jeu.
         Ce système fonctionne a l'aide d'un timer, qui est synchronisé entre tout les joueurs, y compris ceux
-        rejoignant le lobby après son lancement. Ce timer ne se lance uniquement après que le serveur soit à moitié
-        rempli et dure 3 minutes. Si le nombre de joueurs descend en dessous de ce seuil, le timer s'arrête. De plus, qaund le serveur
+        rejoignant le lobby après son lancement. La synchronisation se fait grâce à une fonctionnalité des salles Photon
+        permettant de créer des propriétés spécifiques, couplé à la propriété PhotonNetwork.Time qui
+        est identique pour tout les clients d'une salle au même moment, permettant une synchronisation
+        "parfaite" des timers.
+        Ce timer ne se lance uniquement après que le serveur soit à moitié remplit et dure 3 minutes. Si le nombre de joueurs descend en dessous de ce seuil, le timer s'arrête. De plus, qaund le serveur
         est complet, le temps d'attente est réduit à 30 secondes.
         A la fin du timer, le Master Client charge la map de jeu, qui est synchronisé avec tout les joueurs.
     
+    \subsubsection{Synchronisation du lancement de partie}
+        Une fois la transition effectué, il est nécessaire de synchroniser l'initialisation des différents composants
+        permettant le fonctionnement d'une partie. Par exemple, il faut attendre que tout les joueurs finissent de charger
+        la nouvelle scène avant d'instancier les joueurs sur la carte. Pour celà, un script s'occupe d'activer les différentes phases
+        du lancement de partie suivant certaines conditions. Dans le cas de l'instantiation des joueurs, le script observe une propriété
+        des joueurs déterminant si ces derniers ont chargés la map. Ainsi, le script de spawn des joueurs ne débute qu'une fois que tout les joueurs
+        ont indiqué avoir chargé la carte.
+
     \subsubsection{Synchronisation des joueurs}
         Tout comme sur le lobby, les mouvements des joueurs ainsi que leurs animations sont synchronisés. Cependant,
         un deuxième élément s'ajoute à celà: l'apparition (spawn) des joueurs. Pour celà, des points d'apparitions (spawpoints)
@@ -46,6 +57,10 @@
             -Enfin, le choix retenu est le calcul d'un chemin entier par le Master Client, qui envoie ensuite l'intégralité de ce chemin aux autres joueurs.
             Ainsi le chemin est le même pour tout le monde, mais l'envoi des points se fait de façon discrète: on envoit uniquement l'array de positions généré
             par le Master Client. Ce système permet d'avoir une synchronisation satisfaisante des déplacement et une utilisation minime de la bande passante.
+
+        De plus, une fois le premier chemin créé et partagé aux joueurs de la salle, il est nécessaire d'activer le mouvement des PNJ de façon la plus simultanée possible.
+        Le processus est le même que celui permettant de synchroniser les timers : on crée une propriété de la salle qui indique le moment où
+        les IAs sont activés.
 
     \subsubsection{Synchronisation des assassinats et des morts}
 
