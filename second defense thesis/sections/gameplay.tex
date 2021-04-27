@@ -12,6 +12,7 @@ Une fois sélectionné et lorsque le joueur est proche de sa cible, il peut alor
 L'effet a demandé de créer plusieurs overlay de caméra, afin d'avoir un effet graphique
 appliqué uniquement sur certains layers, et de les surperposer les unes sur les autres. 
 
+\subsubsection{Finishers}
 Nous avons fourni un vrai travail sur les différentes animations de morts des personnages.
 Lors de sa réalisation, un problème s'est posé : Il fallait que les animations de deux GameObject (ici le joueur qui tue et le NPC/joueur tué) 
 soient synchronisées et très précises spatialement. Après avoir regardé plusieurs types de solutions, nous nous sommes tournés vers un outil préintégré nommé Timeline.
@@ -25,8 +26,21 @@ On change le mesh et le matériau de chaque personnage de la timeline pour qu'il
 personnage tué.
 
 Une fois l'animation terminé, un signal est envoyé à script qui réaffiche alors le joueur qui était masqué.
-
+Si la personnage tué était un joueur, alors il réapparait discrètement ailleurs sur la map lors de sa réaparition.
 Le personnage tué disparait de la carte au bout d'une dizaine de secondes avec un shader fait avec Shader Graph.
+
+Voici quelques finishers que nous avons réalisé :
+
+\begin{figure}[hbt!]
+    \centering
+    \includegraphics[scale=0.3]{finishers/shark.png}
+	\includegraphics[scale=0.3]{finishers/fish.png}
+	\includegraphics[scale=0.3]{finishers/hand.png}
+	\includegraphics[scale=0.3]{finishers/balls.png}
+    \caption{Quelques finishers}
+\end{figure}
+\FloatBarrier
+
 
 \subsubsection{Système de manche}
     Le système actuellement utilisé pour le déroulement d'une partie se base sur des manches. Le jeu se fait en deux phase:

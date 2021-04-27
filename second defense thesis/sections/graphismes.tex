@@ -6,12 +6,82 @@ Shader Graph, TimeLine, Visual Effect FX Graph, Cinemachine.
 
 Voici plusieurs exemples des éléments graphique que nous avons pu réaliser : 
 
-% L'eau 
 
-% Shader de disparation des corps
+\subsubsection{Shader Eau}
 
-% Finishers
+L'eau que nous avions de base était plate mais surtout pas animé.
+Plutôt que d'acheter un asset permettant d'avoir de l'eau tout prête,
+nous avons opté pour une réalisation manuelle via l'outil du Shader Graph.
 
-Mode Jour nuit
+Il y a trois blocs pour les vagues, les petites, les moyennes et les grandes,
+plus des blocs sinusoidaux pour que chaque bloc d'eau soit aligné et synchronisé les uns les autres.
+\begin{figure}[hbt!]
+    \centering
+    \includegraphics[scale=0.2]{waterShaderGraph.png}
+    \caption{Shader Graph de l'eau}
+\end{figure}
+\begin{figure}[hbt!]
+    \centering
+    \includegraphics[scale=0.3]{waterBefore.png}
+    \caption{L'eau avant}
+    \includegraphics[scale=0.3]{WaterAfter.png}
+    \caption{L'eau après}
+\end{figure}
+\FloatBarrier
+
+
+
+\subsubsection{Mode Jour/Nuit}
 Le mode jour/nuit permet au lancement de la partie
-de choisir soit le jour, soit la nuit.
+de choisir soit le jour, soit la nuit. Si l'on choisit le mode nuit, un script désactive la lampe de jour,
+ pour la remplacer par une autre plus sombre. Des FX de pluie ont été rajoutés en plus d'effets post processing.
+Mais l'effet le plus important est d'activer toutes les lampes de la carte.
+\begin{figure}[hbt!]
+    \centering
+    \includegraphics[scale=0.3]{day.png}
+    \caption{La carte de jour...}
+
+    \includegraphics[scale=0.3]{night.png}
+    \caption{...et de nuit.}
+
+\end{figure}
+
+\subsubsection{Shader de disparition/apparition}
+Pour éviter de faire apparaître ou faire disparaitre en un instant les personnages, nous avons décidé de créer un shader qui qui selon un matériau en paramètre, 
+fait une transition de l'état initial vers l'état final. 
+\begin{figure}[hbt!]
+    \centering
+    \includegraphics[scale=0.5]{dissolve.png}
+    \caption{Application du shader sur un personnage}
+
+\end{figure}
+\FloatBarrier
+
+Le problème que nous avions rencontré était que lorsque nous appliquions le matériau avec le shader,
+les paramètres de l'instance du shader sur le matériau était communs. Résultat : lorsque un premier personnage mourrait puis dans la foulée un autre mourait également,
+alors le premier mort recommencait l'animation de transition en plus de changer de couleur de vêtements plus de peau.
+La solution fut toute simple, il nous a suffit en runtime de créer un nouveau matériau et d'appliquer les paramètres du matériau dans le script.
+
+% \subsubsection{Radar}
+
+% A écrire
+
+\subsubsection{Post Processing}
+
+Nous avons ajouté le package Post Processing de Unity qui avec l'URP (Universal Render Pipeline)
+nous a permis de créer des ambiances et effets visuels sympatiques.
+Nous avons créé des volumes, où quand la caméra rentre dans le volume, alors les effets sont activés sur la caméra active.
+Cela nous a permis notament d'avoir un effet vieux film/sépia lorsque le joueur passe en mode verrouillage
+
+\begin{figure}[hbt!]
+    \centering
+    \includegraphics[scale=0.2]{sepia_mode.png}
+    \caption{Mode verrouillage}
+\end{figure}
+\FloatBarrier
+
+
+Si l'on s'attarde sur cette figure, nous voyons que l'effet "sépia" n'est pas visible sur certains objets.
+Ce fut toute la difficulté d'avoir des effets de Post Processing différents sur chaque layer.
+Nous avons donc ajouté plusieurs caméra \texttt{Overlay} superposées sur la caméra principale qui affichent chacune une partie de l'image.
+Après avoir réglé des soucis de profondeur sur les caméras, nous avons l'effet ci dessus.
