@@ -40,7 +40,6 @@
         grâce à Photon. Ils sont donc au départ placé de la même façon pour tout les joueurs. Il faut également synchroniser leur apparence.
         Encore une fois, cette dernière est déterminé par le Master Client puis partagé aux autres joueurs grâce à une méthode RPC.
 
-
         Mais les problèmes commencent au moment de synchroniser le mouvement des IA. Le système qui a été créé par Dov permet
         à l'IA de se déplacer sur la map, il faut maintenant que ce mouvement soit propagé de façon quasi-identique à tout les joueurs.
         Pour cela, plusieurs méthodes ont été envisagées:
@@ -59,8 +58,8 @@
             par le Master Client. Ce système permet d'avoir une synchronisation satisfaisante des déplacement et une utilisation minime de la bande passante.
 
         De plus, une fois le premier chemin créé et partagé aux joueurs de la salle, il est nécessaire d'activer le mouvement des PNJ de façon la plus simultanée possible.
-        Le processus est le même que celui permettant de synchroniser les timers : on crée une propriété de la salle qui indique le moment où
-        les IAs sont activés.
+        Le processus est le même que celui permettant de synchroniser les timers : on crée une propriété de la salle qui indique le moment exact où
+        les IAs sont activés, une fonctionnalité de Photon permettant l'accés à une valeur identique sur tout les clients au même instant (PhotonNetwork.Time).
 
     \subsubsection{Synchronisation des assassinats et des morts}
 
