@@ -39,3 +39,15 @@ Le jeu est à présent dans un état "jouable". Cependant, il faut encore implé
 		finishers grâce à ce système de progression. Nous pourrons également modifier le système actuel 
 		de customisation de personnage et restreindre l'utilisation de certaines options d'apparence à un certain niveau.
 
+\subsection{Prévisions pour le HUD}
+    \subsubsection{Tableau des scores}
+    Le scoreboard reste très simple et manque d’informations. Nous souhaiterions donner au tableau des scores un affichage plus épuré et plus simple. Une mise en tableau des différentes informations permettrait d’éviter au texte de dépasser les bordures du canvas. Elle facilitera grandement l’ajout, la suppression ou la modification d’une valeur ou d’un joueur pendant la partie ainsi que l’alignement des valeurs appartenant a la même categorie. 
+    Cette nouvelle version du tableau comprendrai l'affichage des points, du nombre de fois où le joueur est mort, le nombre de fois où il a tué un joueur, le nombre de fois ou il a tué une IA et son PING avec le serveur.
+    Ce formatage sous forme de tabeau permet aussi de faire une sauvegarde rapide et temporaire du tableau dans les fichiers du jeu. Il serait ainsi beaucoup plus simple pour le logiciel d'y acceder et de l'editer.
+    
+    \begin{figure}[hbt!]
+            \centering
+            \includegraphics[scale=0.3]{img/newscoreboard.PNG}
+            \caption{Tableau Des Scores V2.0}
+    \end{figure}
+    
