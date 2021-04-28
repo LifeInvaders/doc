@@ -4,17 +4,17 @@ Pour rendre le jeu plus beau, nous avons intégré plusieurs effets.
 Afin de les créer, nous avons utilisé plusieurs outils de Unity :
 Shader Graph, TimeLine, Visual Effect FX Graph, Cinemachine.
 
-Voici plusieurs exemples des éléments graphique que nous avons pu réaliser : 
+Voici plusieurs exemples des éléments graphiques que nous avons pu réaliser : 
 
 
 \subsubsection{Shader Eau}
 
-L'eau que nous avions de base était plate mais surtout pas animé.
-Plutôt que d'acheter un asset permettant d'avoir de l'eau tout prête,
-nous avons opté pour une réalisation manuelle via l'outil du Shader Graph.
+L'eau que nous avions était plate mais surtout n'était pas animée.
+Plutôt que d'acheter un asset permettant d'avoir de l'eau animée,
+nous avons opté pour une réalisation manuelle à l'aide de l'outil Shader Graph.
 
-Il y a trois blocs pour les vagues, les petites, les moyennes et les grandes,
-plus des blocs sinusoidaux pour que chaque bloc d'eau soit aligné et synchronisé les uns les autres.
+Il y a trois blocs pour les vagues (les petites, les moyennes et les grandes),
+ainsi que des blocs sinusoïdaux pour que chaque bloc d'eau soit aligné et synchronisé avec les autres.
 \begin{figure}[hbt!]
     \centering
     \includegraphics[scale=0.2]{waterShaderGraph.png}
@@ -32,9 +32,9 @@ plus des blocs sinusoidaux pour que chaque bloc d'eau soit aligné et synchronis
 
 
 \subsubsection{Mode Jour/Nuit}
-Le mode jour/nuit permet au lancement de la partie
-de choisir soit le jour, soit la nuit. Si l'on choisit le mode nuit, un script désactive la lampe de jour,
- pour la remplacer par une autre plus sombre. Des FX de pluie ont été rajoutés en plus d'effets post processing.
+Le mode jour/nuit permet, au lancement de la partie,
+de choisir soit le jour soit la nuit. Si l'on choisit le mode nuit, un script désactive la lampe de jour,
+ pour la remplacer par une autre plus sombre. Des effets de pluie ont été rajoutés en plus d'effets de post processing.
 Mais l'effet le plus important est d'activer toutes les lampes de la carte.
 \begin{figure}[hbt!]
     \centering
@@ -57,10 +57,10 @@ fait une transition de l'état initial vers l'état final.
 \end{figure}
 \FloatBarrier
 
-Le problème que nous avions rencontré était que lorsque nous appliquions le matériau avec le shader,
-les paramètres de l'instance du shader sur le matériau était communs. Résultat : lorsqu'un premier personnage mourrait juste après un autre, 
-le premier mort recommencait l'animation de transition en plus de changer de couleur de vêtements et de peau.
-La solution fut toute simple, il nous a suffit de créer un nouveau matériau et d'appliquer les paramètres du matériau dans le script.
+Nous avons rencontré un problème lorsque nous appliquions le matériau avec le shader,
+les paramètres de l'instance du shader sur le matériau étant communs. Ainsi, lorsqu'un premier personnage mourrait juste après un autre, 
+le premier mort recommençait l'animation de transition en plus de changer de couleur de vêtements et de peau.
+La solution trovée, toute simple, consiste à créer un nouveau matériau et d'appliquer  ses paramètres dans le script.
 
 % \subsubsection{Radar}
 
@@ -69,9 +69,9 @@ La solution fut toute simple, il nous a suffit de créer un nouveau matériau et
 \subsubsection{Post Processing}
 
 Nous avons ajouté le package Post Processing de Unity qui avec l'URP (Universal Render Pipeline)
-nous a permis de créer des ambiances et effets visuels sympatiques.
-Nous avons créé des volumes, où quand la caméra rentre dans le volume, alors les effets sont activés sur la caméra active.
-Cela nous a permis notament d'avoir un effet vieux film/sépia lorsque le joueur passe en mode verrouillage.
+nous a permis de créer des ambiances et effets visuels agréables.
+Nous avons créé des volumes qui activent les effets de caméra.
+Cela nous a permis notamment d'avoir un effet vieux film/sépia lorsque le joueur passe en mode verrouillage.
 
 \begin{figure}[hbt!]
     \centering
@@ -82,6 +82,6 @@ Cela nous a permis notament d'avoir un effet vieux film/sépia lorsque le joueur
 
 
 Si l'on s'attarde sur cette figure, nous voyons que l'effet "sépia" n'est pas visible sur certains objets.
-Ce fut toute la difficulté d'avoir des effets de Post Processing différents sur chaque layer.
-Nous avons donc ajouté plusieurs caméra \texttt{Overlay} superposées sur la caméra principale qui affichent chacune une partie de l'image.
-Après avoir réglé des soucis de profondeur sur les caméras, nous avons l'effet ci dessus.
+C'est là toute la difficulté d'avoir des effets de Post Processing différents sur chaque couche.
+Nous avons donc ajouté plusieurs caméras \texttt{Overlay} superposées sur la caméra principale qui affichent chacune une partie de l'image.
+Après avoir réglé des soucis de profondeur sur les caméras, nous avons obtenu l'effet précédent.
