@@ -1,7 +1,7 @@
-\subsection{Intelligence Artificielle}
+\subsection{Intelligence artificielle}
     \subsubsection{NPC Zone \& Système de déplacement}
     Nous avons essayé plusieurs types de déplacement pour les IA. Nous avons fait des NPC zones qui permettent de créer des quartiers
-    où les NPC peuvent se balader librement dans la zone. Si un NPC est tué dans la zone, un nouveau apparaît avec un effet visuel 
+    où les NPC peuvent se balader librement dans la zone. Si un NPC est tué dans la zone, un nouveau apparait avec un effet visuel 
     approprié (shader d'apparition).
     \newline
     
@@ -10,12 +10,12 @@
     
     \begin{itemize}
         \item Le premier algorithme que nous avions montré lors de la première soutenance
-        était un déplacement vers un élément alétoire d'une liste de coordonées prédéfinie.
-        Le tracé était de ce fait trop prévisible et ne permettait pas de se déplacer librement tout en restant discret.
+        était un déplacement vers un élément alétoire d'une liste de coordonnées prédéfinie.
+        Le tracé était de ce fait trop prévisible et ne permettait pas de se déplacer librement en restant discret.
         De plus, si un personnage allait d'un point A vers un point B, et un autre de B vers A,
-        alors en prenant le chemin le plus court ils finissaient par se croiser (face à face) et finir coincés.
+        alors prenant le chemin le plus court ils finissaient par se croiser (face à face) et finir coincés.
         \newline
-        \item  Nous avons donc décidé de rajouter plus d'alétoire dans leurs déplacements.
+        \item Nous avons donc décidé de rajouter plus d'aléatoire dans leurs déplacements.
         Les IA cherchent une destination "accessible" dans un rayon proche.
         Le problème était que la librairie Unity AI intégrée cherche un chemin complet ou partiel.
         Le rendu final montrait des personnages qui finissaient toujours par être attirés par les bordures de la carte.
@@ -38,8 +38,14 @@
    
     \subsubsection{Evenements}
 
-    Afin de rendre les IA moins scriptées, nous avons ajouté des événements alétoires.
+    Afin de rendre les IA moins scriptées, nous avons ajouté des événements aléatoires.
     
     En outre, des zones de discussion ont été implémentées : ce sont des zones où les joueurs et le NPC peuvent interagir 
     et se fondre dans la discussion pour se cacher. Les IA qui les traversent s'y arrêtent et repartent au bout d'une durée 
-    de temps aléatoire. 
+    de temps aléatoire.
+
+    \begin{figure}[hbt!]
+        \centering
+        \includegraphics[scale=0.5]{talk_zone.png}
+        \caption{Zone de discussion repérable par un shader au niveau du sol réalisé par nos soins.}
+    \end{figure}
