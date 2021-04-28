@@ -29,23 +29,26 @@ Le jeu est à présent dans un état "jouable". Cependant, il faut encore implé
 	de jeu qui ne l'ont pas encore été au réseau Photon pour permettre au joueurs d'y accéder. De plus, le 
 	travail continue sur la synchronisation ie. des personnages joueurs et non-joueurs, notamment il est 
 	question d'optimisation pour le mouvement des IA qui génère encore une utilisation de bande passante importante. 
-	Il serait intéressant d'essayer d'implémenter une méthode de compression pour les vecteurs afin de diminuer 
+	Il serait intéressant de tenter l'utilisation d'une méthode de compression pour les vecteurs afin de diminuer 
 	la quantité d'information envoyée.
 
 	\subsubsection{Progression}
-		Bien qu'un système d' expérience et de niveau ait été implémenté, celui-ci n'a pour 
+		Bien qu'un système d' expérience et de niveau ait été implémenté, celui-ci n'a pour l'instant pour 
 		l'instant pas d'utilité. Mais de nombreuses opportunités de progression se sont ouvertes, 
 		notamment grâce au travail de Dov. Par exemple, nous comptons permettre le débloquage des 
-		finishers grâce à ce système de progression. Nous pourrions également modifier le système actuel 
+		finishers grâce à ce système de progression. Nous pourrons également modifier le système actuel 
 		de customisation de personnage et restreindre l'utilisation de certaines options d'apparence à un certain niveau.
 
-	\subsubsection{Gameplay}
-
-	Nous avons réalisé plusieurs pouvoirs\footnote{Comme l'écran de fumée, le vol d'apparence, le lancer de couteau}, mais ils n'ont pas encore été implémentés.
-	L'objectif de cette dernière ligne droite sera de les rendre compatible multijoueur.
-	
-	\subsubsection{Carte}
-
-	Pour la prochaine soutenance, l'objectif est d'avoir une map terminée dans les moindres 
-	détails. Comme cet objectif semble raisonnable, un seconde carte est aussi une possibilité 
-	envisagée pour l'ultime soutenance.
+\subsection{Prévisions pour les Interfaces}
+    \subsubsection{Tableau des scores}
+    Le scoreboard reste très simple et manque d’informations. Nous souhaiterions donner au tableau des scores un affichage plus épuré et plus simple. Une mise en tableau des différentes informations permettrait d’éviter au texte de dépasser les bordures du canvas. Elle facilitera grandement l’ajout, la suppression ou la modification d’une valeur ou d’un joueur pendant la partie ainsi que l’alignement des valeurs appartenant a la même categorie. 
+    Cette nouvelle version du tableau comprendrai l'affichage des points, du nombre de fois où le joueur est mort, le nombre de fois où il a tué un joueur, le nombre de fois ou il a tué une IA et son PING avec le serveur.
+    Ce formatage sous forme de tabeau permet aussi de faire une sauvegarde rapide et temporaire du tableau dans les fichiers du jeu. Il serait ainsi beaucoup plus simple pour le logiciel d'y acceder et de l'editer.
+    
+    \begin{figure}[hbt!]
+            \centering
+            \includegraphics[scale=0.3]{img/newscoreboard.PNG}
+            \caption{Tableau Des Scores V2.0}
+    \end{figure}
+    \subsubsection{HUD}
+    
