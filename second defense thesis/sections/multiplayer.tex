@@ -11,7 +11,8 @@
         Ce timer ne se lance uniquement après que le serveur soit à moitié remplit et dure 3 minutes. Si le nombre de joueurs descend en dessous de ce seuil, le timer s'arrête. De plus, qaund le serveur
         est complet, le temps d'attente est réduit à 30 secondes.
         A la fin du timer, le Master Client charge la map de jeu, qui est synchronisé avec tout les joueurs.
-    
+
+
     \subsubsection{Synchronisation du lancement de partie}
         Une fois la transition effectué, il est nécessaire de synchroniser l'initialisation des différents composants
         permettant le fonctionnement d'une partie. Par exemple, il faut attendre que tout les joueurs finissent de charger

@@ -57,7 +57,7 @@ Voici quelques finishers que nous avons réalisé :
     Joueurs comme IA peuvent être tués. Dans le cas d'un joueur, un système de mort a été mis en place. Ainsi,
     quand le joueur se fait tuer, son personnage est désactivé temporairement et il rentre
     en mode "spectateur". Il peut se balader sur la map, mais il ne peut en aucun cas interagir avec l'environnement,
-	et il n'est pas visible des autres joueurs.
+    et il n'est pas visible des autres joueurs. Une fois la manche terminé, le joueur réapparait aléatoirement sur la map.
 
 \subsubsection{Système de point}
     Un système de point a également été implémenté. Il fonctionne de la façon suivante:
@@ -75,6 +75,9 @@ Voici quelques finishers que nous avons réalisé :
 	
 \subsubsection{Système de fin de partie}
 	Finir une partie est tout un processus. Il faut d'abord désactiver le mouvement du joueur.
-	On présente ensuite plusieurs informations aux joueurs comme son rang final, le nombre d'assassinats
-	et de mort, ainsi que l'expérience acquise. Ensuite, on propose au joueur de rejouer. S'il dit non, il quitte la salle.
-	Sinon, quand tout les joueurs ont décidé de redémarrer ou pas, les joueurs retournent sur le lobby.
+	On présente ensuite plusieurs informations comme le rang final, le nombre d'assassinats
+	et de mort, ainsi que l'expérience acquise. Il y a également une sauvegarde de ses statistiques et une mise à jour du système
+	de niveau dans le but de permettre leur utilisation éventuel par le système de progression.
+	Ensuite, on propose au joueur de rejouer. S'il dit non, il quitte la salle et peut fermer le jeu ou rejoindre une autre salle.
+	Sinon, quand tout les joueurs ont décidé de redémarrer ou de partir, les joueurs retournent 
+	sur le lobby pour recommencer une partie.
