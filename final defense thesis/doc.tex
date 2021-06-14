@@ -1,0 +1,96 @@
+\documentclass[french, 15pt]{article}
+
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={150mm,240mm},
+ left=30mm,
+ top=30mm,
+ }
+
+
+\usepackage{helvet}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{comment}
+\usepackage{subcaption}
+\usepackage{subfiles}
+\usepackage{graphicx}
+\usepackage{diagbox}
+\usepackage[table,xcdraw]{xcolor}
+% \usepackage{minted}
+\usepackage{placeins}
+
+\usepackage{fancyhdr}
+
+\setcounter{secnumdepth}{4}
+
+\graphicspath{ {./img/} }
+
+\title{\fontfamily{phv}\selectfont \Huge \textbf{Panic At Tortuga}}
+\author{\fontfamily{phv}\Huge{Rapport de projet}}
+\date{\fontfamily{phv}\selectfont Juin 2021}
+
+\begin{document}
+
+\begin{titlepage}
+    \maketitle
+    
+    \thispagestyle{empty}
+    % {\fontencoding{T1}\fontfamily{calligra}\selectfont the font is temporarily changed}
+    \vspace{10pt}
+    \begin{figure}[hbt!]
+        \centering
+        \includegraphics[scale=0.43]{logo.png}
+    \end{figure}
+    \vspace{10pt}
+
+    \begin{figure}[hbt!]
+        \centering
+        \includegraphics[scale=0.84]{logo_lifeinvaders_copie.png}
+    \end{figure}
+\end{titlepage}
+
+% ////////////////////////////////////////////////
+% ////////////////////////////////////////////////
+% ////////////////////////////////////////////////
+
+
+\tableofcontents
+\newpage
+
+\pagestyle{fancy}
+\lhead{Panic At Tortuga}
+\fancyhead[C]{Avril 2021}
+\rhead{LifeInvaders Production}
+
+\section{Introduction}
+
+% introduction à compléter
+L'heure du rendu final a sonné. Cette dernière période de travail n'a pas été la plus calme, car rythmée par un TD de maths et les partiels de fin d'année.
+Cependant, le projet n'a pas cessé d'évoluer pour atteindre sa forme finale, plutôt aboutie.
+
+\newpage
+\section{Développement}
+\subfile{sections/timeline.tex}
+\subfile{sections/progression.tex}
+\subfile{sections/launcher.tex}
+\subfile{sections/ia.tex}
+\subfile{sections/map.tex}
+\subfile{sections/website.tex}
+\subfile{sections/multiplayer.tex}
+\subfile{sections/gameplay.tex}
+\subfile{sections/graphismes.tex}
+\subfile{sections/prev.tex}
+\newpage
+\section{Conclusion}
+% conclusion à changer
+En définitive, le projet est sur une bonne lancée en dépit de quelques contre-temps.
+L’implémentation du multijoueur progresse à grands pas, de la même façon que les éléments
+client-side (animations, mouvements, shaders…) et que la carte. Le site internet permet
+maintenant de suivre le projet mois par mois, et le launcher affiche les nouveautés et permet de rester à jour.
+\listoffigures
+\listoftables
+\end{document}
