@@ -105,7 +105,7 @@
     marchés animés. Les tonnelles et les nombreuses lanternes rendent l’environnement 
     plus chaleureux, et les arcades, dotées de portes qui se ferment lorsqu’un joueur 
     les passe en courant, ajoutent une mécanique de fuite au jeu\footnote{Cf. Gameplay/Environnement}. L’organisation du 
-    village se fait autour de la place de l’église, qui fait office de place du marché.\\
+    village se fait autour de la place de l’église, qui fait office de place du marché.
 
 
 \subsubsection{Deuxième soutenance}
@@ -116,7 +116,7 @@
     En outre, les nombreux NPC ainsi que les marchandises exposées au milieu des rues font aussi de bonnes diversions.
     Enfin, l'ajout d'escaliers offrant un second accès à la colline permettent non seulement de désengorger la butte, envahie par les NPC, mais aussi 
     de redynamiser la digue qui était jusque là exempte de tout intérêt : pas de bâtiments, pas de cachettes...
-    \\
+    
     Mais la principale nouveauté est le mode nuit : en effet, il est désormais possible de passer du jour à la nuit grâce à de simples boutons-radios. 
     Le mode nuit applique des effets de post-processing à toutes les textures de la carte, et assombrissant les couleurs et en appliquant certains effets 
     visuels se traduisant en jeu par un environnement plus sombre (deonc nocturne). 
@@ -127,8 +127,10 @@
 
 \subsubsection{Dernière soutenance}
 
+    \paragraph{Nouvelle carte}
+
     Une deuxième carte a été commencée, afin d'ajouter de l'intérêt au jeu. Cette dernière utilise le fort de la carte 
-    de démonstration de l'Asset (faite par Synty), que nous avons modifié, en ajoutant de nombreuses rampes d'accès ainsi qu'un tyrolienne, 
+    de démonstration de l'Asset (faite par Synty), que nous avons modifié, en ajoutant de nombreuses rampes d'accès ainsi qu'une tyrolienne \footnote{Cf. Mécaniques de jeu}, 
     le nouveau mode de déplacement du jeu. Le quartier de pêcheurs sur la plage permet de créer une zone "urbaine", pour se 
     cacher dans la foule, alors que le fort permet de prendre de la hauteur pour repérer sa cible. Une grande difficulté rencontrée sur 
     cette carte est sa verticalité, qui requiert un nombre important d'escalier et de rampes d'accès, pour permettre la 
@@ -144,5 +146,25 @@
     \FloatBarrier
 
 
+    \paragraph{Finition de la première carte}
 
+    Une nouvelle tyrolienne ayant été créée, il nous a semblé impératif de l'ajouter à la carte. Il est donc maintenant possible 
+    de grimper en haut de la grande tour, pour ensuite se laisser glisser sur une centaine de mètres. Des props ont aussi 
+    été ajoutées, afin de rajouter du détail et donc du réalisme au jeu. Ces props consistent en des objets naturels (feuilles, pierres, 
+    hautes herbes...) et en des petits objets, posés sur les tables du marché ou devant des maisons (tonneaux, pièces, boussoles...)
+    Des murs invisibles, dont le franchissement est impossible autant aux joueurs qu'aux NPC, délimitent maintenant la limite 
+    jouable de la carte, pour éviter toute forme d'antijeu de la part des joueurs et tout déplacement hasardeux des NPC.
+    
 
+    \paragraph{Ambiance sonore}
+
+    Une grande nouveauté du jeu est l'ajout de sons d'ambiance, qui représentent une grande avancée. En effet, bien que cela soit 
+    simple à implémenter grâce au composant \textit{source audio} d'Unity, les sons sont très importants pour casser 
+    la monotonie du jeu. En effet, un joueur qui n'a pour sons que ses clics de souris a tendance à se lasser très vite, alors 
+    que l'ajout de sons, même désactivables, dynamise le jeu.
+
+    Des sons de vagues et de perroquets ont été téléchargés sur une bibliothèque de sons libres de droits, et ont été associés 
+    à des objets de la carte. Dans le cas des bruits d'océan, ils ont dû être ajoutés à des objets invisibles situés près des 
+    plages, afin d'éviter que toutes les tuiles d'océan jouent le son, ce qui serait aussi coûteux que désagréable. 
+
+    % ajouter image perroquet

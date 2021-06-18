@@ -6,12 +6,13 @@
         Afin de développer le cœur de notre jeu, le système permettant de connecter les joueurs ensemble, nous avons utilisé la framework Photon, et plus précisément 
         sa version la plus aboutie, Photon Unity Network 2 (PUN2). \newline
         Photon est un outil pour Unity qui joue le rôle de framework dans la création d'environnements multijoueurs. Il offre de nombreuses fonctionnalités commes:
+        
         \begin{itemize}
             \item Des serveurs dédiés à couverture mondiale
             \item La création de lobbies permettant au joueurs de facilement se connecter à une partie
             \item Un système RPC permettant la communication joueur-joueur.
-            
         \end{itemize}
+
         Photon fonctionne grâce à un système de méthodes RPCs. Un joueur génère un message RPC qui est distribué par un serveur Photon aux autres joueurs selon un filtre. On peut donc facilement synchroniser divers paramètres essentiel à la réalisation d'un jeu multijoueur.\\
         Dans le cadre de notre jeu, ce framework est nécessaire pour connecter les joueurs entre eux et synchroniser les déplacements des joueurs et de l'IA ainsi que certains évènement tels que le commencement d'une partie ou le partage des cible, mais également pour communiquer les actions réalisés par les joueurs (tel que l'éxecution d'une cible) à tout le lobby.
         
@@ -20,12 +21,15 @@
     \subsubsection{Première soutenance}
 
         \paragraph{Connexion aux serveurs Photon}
+
             Avant toute chose, il est essentiel de pouvoir connecter le joueur à un serveur de jeu.
             Grâce à Photon, qui fournit non seulement un serveur gratuit d'une capacité de 20 joueurs simultanés,
             mais également un accès facile à ce dernier grâce à son API, connecter les joueurs au serveur est chose
             aisé. Il suffit d'un appel de méthode pour connecter et déconnecter le joueur. Simple et efficace.
 
+
         \paragraph{Création d'une salle}
+
             Photon se base sur un système de salle. Ces dernières permettent aux joueurs présent à l'intérieur de communiquer entre eux.
             Il est actuellement possible de créer ainsi que de rejoindre une salle. Ces deux processus se font automatiquement, sans effort du joueur,
             mais il est prévu de donner un plus grand contrôle sur ce système aux clients.
@@ -33,7 +37,9 @@
             Si aucune salle est disponible, alors le client en crée une qui se rend disponible aux autres joueurs.
             Ce système a été implémenté par Julien et Harrys.
 
+
         \paragraph{Instantiation et synchronisation}
+
             C'est Harrys qui s'est occupé de cette partie. Une fois que le joueur accède à une salle,
             celui-ci charge une scène, la même que tous les autres joueurs.
             Photon permet alors d'instancier son personnage, qui sera visible par tout les autres joueurs
@@ -53,10 +59,10 @@
             Cepdendant le travail effectué jusqu'à présent facilitera grandement cette tâche.
             
             \begin{figure}[!hbt]
-                    \centering \includegraphics[scale=0.2]{in_game_lobby.png} 
-                    \caption{Photo de groupe en multijoueur}
-                \end{figure}
-
+                \centering
+                    \includegraphics[scale=0.2]{in_game_lobby.png} 
+                \caption{Photo de groupe en multijoueur}
+            \end{figure}
 
 
         \paragraph{Transition du Lobby vers le jeu}
@@ -75,7 +81,6 @@
 
     \subsubsection{Deuxième soutenance}
 
-
         \paragraph{Synchronisation du lancement de partie}
         
             Une fois la transition effectué, il est nécessaire de synchroniser l'initialisation des différents composants
@@ -85,6 +90,7 @@
             des joueurs déterminant si ces derniers ont chargés la map. Ainsi, le script de spawn des joueurs ne débute qu'une fois que tout les joueurs
             ont indiqué avoir chargé la carte.
 
+
         \paragraph{Synchronisation des joueurs}
 
             Tout comme sur le lobby, les mouvements des joueurs ainsi que leurs animations sont synchronisés. Cependant,
@@ -93,6 +99,7 @@
             de faire apparaîte chaque joueur à une position unique sur la carte : un point = un joueur, pas plus. Une fois cela fait,
             il faut également synhcroniser la réapparition des joueurs, pour cela on applique le même système, en ne prenant en compte que les joueurs
             morts.
+
 
         \paragraph{Synchronisation de l'IA}
 
@@ -127,6 +134,7 @@
             Le processus est le même que celui permettant de synchroniser les timers : on crée une propriété de la salle qui indique le moment exact où
             les IAs sont activés, une fonctionnalité de Photon permettant l'accés à une valeur identique sur tout les clients au même instant (PhotonNetwork.Time).
 
+
         \paragraph{Synchronisation des assassinats et des morts}
 
             Une dernière partie de la synchronisation inclue celle des évènement de mort, pour les joueurs ainsi
@@ -153,11 +161,14 @@
             autre joueur a tué sa cible... En bref, chaque client prend une décision en fonction de l'information reçu
             Les détails du système de morts sont dans la partie gameplay.
 
+
         \paragraph{Synchronisation du déroulé de partie}
             De la même manière, un système d'event a été mis en place permettant de synchroniser les différentes étapes du jeu, 
             avec une période de synchronisation des IA en début de partie, différentes manches et enfin une phase de fin avec les stats.
 
+
         \paragraph{Chat Photon}
+
         Enfin, un chat a été implémenté grâce à une librairie de Photon. Ce chat permet aux joueurs 
         d'une salle de communiquer entre eux, dans le lobby et en jeu.
 
@@ -168,3 +179,8 @@
         \end{figure}
 
 
+    \subsubsection{Dernière soutenance}
+
+        \paragraph{Synchronisation des animations}
+
+            % à remplir

@@ -30,21 +30,17 @@
 				\end{subfigure}
 				\caption{Exemple des portes que nous avons réalisé}
 			\end{figure}
+			\FloatBarrier
 
 		\paragraph{Organisation de partie}
 			L'organisation de partie concerne la création des scripts et ressources permettant à 
 			chaque partie multijoueur de se dérouler suivant un schéma prédéterminé. Cela comprend le début et 
-			la fin de manche (choix du gagnant, présentation du classement
-			de fin de partie par exemple), le placement des éléments dynamiques de la scène,
-			les timers, le comptage des points, l'assignation des cibles...
-			\\
+			la fin de manche (choix du gagnant, présentation du classement de fin de partie par exemple), le placement des éléments 
+			dynamiques de la scène, les timers, le comptage des points, l'assignation des cibles...
 
-			Pour offrir la meilleure expérience de jeu possible, cette organisation
-			doit permettre à chaque manche d'être unique et imprévisible.
-			Pour cela, nous introduirons de la complexité dans les différentes
-			mécaniques de jeu. Par exemple, on peut attribuer plus de points
-			au premier joueur ayant abattu sa cible ou à un joueur ayant
-			survécu un certain temps sans se faire tuer.
+			Pour offrir la meilleure expérience de jeu possible, cette organisation doit permettre à chaque manche d'être unique et imprévisible.
+			Pour cela, nous introduirons de la complexité dans les différentes mécaniques de jeu. Par exemple, on peut attribuer plus de points
+			au premier joueur ayant abattu sa cible ou à un joueur ayant survécu un certain temps sans se faire tuer.
 
 
 			
@@ -52,19 +48,19 @@
 
         \paragraph{Environnement}
 
-            Nous nous sommes beaucoup inspirés du mode multijoueur des premiers Assassin's Creed.
-            Le système de grimpe s'étant montré trop complexe à mettre en place, 
-            nous avons réutilisé quelques idées de gameplay pour l'environement, comme les échelles et les portes.\\
+            Nous nous sommes beaucoup inspirés du mode multijoueur des premiers Assassin's Creed. Le système de grimpe s'étant 
+			montré trop complexe à mettre en place, nous avons réutilisé quelques idées de gameplay pour l'environement, comme les échelles et les portes.
 
             \begin{figure}[hbt!]
                 \centering
                 \includegraphics{ladder.png}
                 \caption{Joueur grimpant sur l'échelle}
             \end{figure}
+			\FloatBarrier
 
             Les échelles permettent de créer un peu de verticalité dans nos niveaux.
             Elles ne peuvent être utilisées que par les joueurs, mais ont leurs avantages comme leurs inconvénients : ainsi,
-            prendre de la hauteur permet d'emprunter des raccourcis, mais retire la discrétion (car personne de civilisé devrait être sur les toits !) \\
+            prendre de la hauteur permet d'emprunter des raccourcis, mais retire la discrétion (car personne de civilisé devrait être sur les toits !)
             
             Les portes permettent de barrer le passage pour échapper à son agresseur.
             Elles se ferment quand le joueur passe dessus en courant
@@ -75,14 +71,13 @@
                 \includegraphics{doors_closed.png}
                 \caption{Porte fermée après le passage d'un joueur}
             \end{figure}
+			\FloatBarrier
 
-            Ces interractions environnementales ont été réalisé par Renaud-Dov.
 
         \paragraph{Déplacement du personnage}
-            C'est Renaud-Dov qui a réalisé les contrôles de déplacement du personnage:
-        
+            
             Tout jeu est très rapidement limité par la capacité de déplacement du personnage et sa vitesse.
-            Nous avons donc réalisé un script de déplacement qui permet au joueur de marcher, courir, sauter et grimper aux échelles.\\
+            Nous avons donc réalisé un script de déplacement qui permet au joueur de marcher, courir, sauter et grimper aux échelles.
 
             Pour le côté technique, nous avons dans un premier temps utilisé l'Input System de base proposé par Unity. Mais plusieurs problèmes se sont posés:
             \begin{itemize}
@@ -133,6 +128,7 @@
                 \end{subfigure}
                 \caption{Système de verrouilage}
             \end{figure}
+			\FloatBarrier
 
             Pour le material qui fait disparaître les corps, nous avons créé manuellement un shader avec l'outil Shader Graph de Unity\footnote{Voir fig 7}.
             Nous pouvons donc créer des shaders personnalisés et dynamiques (avec comme exemple l'utilisation du temps).
@@ -142,6 +138,7 @@
                 \includegraphics[scale=0.29]{dissolve_shader.png}
                 \caption{Vue du shader créé depuis Shader Graph}
             \end{figure}
+			\FloatBarrier
 
 
 
@@ -166,7 +163,7 @@
 			Ce dernier permet de réaliser des clips vidéos.
 
 			Voici donc comment nous avons intégré les timelines :
-			\newline
+			
 			Des faux personnages jouant les animations sont ajoutés sur la carte à la position et rotation du tueur.
 			On masque le tueur et la victime de la carte.
 			On change le mesh et le matériau de chaque personnage de la timeline pour qu'il corresponde au tueur et au
@@ -235,6 +232,17 @@
 
 		\paragraph{Cinemachine}
 
+			Cinemachine est un suite modulaire d'outils de caméras pour Unity, qui offre 
+			une qualité de contrôle de la caméra digne de jeux AAA. Cinemachine est conçu pour être utilisé 
+			avec toutes les caméras d'un projet, mais peut aussi être utilisé en parallèle des caméras existantes. 
+			Les Dolly track (rails de caméras) permettent de créer des animations de début de jeu ou 
+			des vidéos de présentation beaucoup plus facilement qu'avec le système de caméras intégrées. 
+
+			A l'échelle du jeu, Cinemachine est utilisé sur la quasi-totalité des caméras, 
+			afin de permettre une transition douce entre la première et la troisième personne et pour 
+			proposer des cinématiques plus vivantes, avec des déplacements et des focus.
+
+
 
 	\subsubsection{Dernière soutenance}
 
@@ -290,15 +298,15 @@
 			Le poison n'est pas vraiment un atout en jeu, car il nécéssite de suivre sa victime et de la tuer comme pour une 
 			élimination classique. Cependant, lors de l'élimination de la cible, cette dernière donne plus de points, car son 
 			élimination est discrète.
+			
+			\begin{figure}[hbt!]
+				\centering
+				\includegraphics[scale=0.35]{poison.png}
+				\caption{Agonie d'un personnage empoisonné}
+			\end{figure}
+			\FloatBarrier
 
-		\paragraph{Sprint}
-	
-			Le pouvoir de sprint permet au joueur de se déplacer très rapidement et d'être invulnérable face aux attaques 
-			au couteau. En revanche, le joueur ne peut pas emprunter d'échelles ou de tyroliennes en même temps que ce pouvoir, afin 
-			de ne pas déséquilibrer le jeu. D'un point de vue technique, l'attribut vitesse du joueur est temporairement accru, 
-			et des effets de post-processing sont appliqués à la caméra du joueur pour des raisons purement esthétiques (aberration 
-			chromatique, modification des tons de lumière...).
-
+		
 		\paragraph{Lancer de couteaux}
 
 			Le pouvoir du lancer de couteaux est de loin celui ayant été le plus long à mettre en oeuvre. Lorsque l'assassin 
@@ -307,6 +315,24 @@
 			période donnant à son assaillant le temps de l'achever. D'un point de vue technique, une refonte totale des animations *
 			a eu lieu, afin que les personnages boiteux aient une animation spécifique. De nombreux nouveaux cas pour la course, les 
 			échelles et les tyroliennes ont également dû être gérés. 
+
+
+		\paragraph{Sprint}
+	
+			Le pouvoir de sprint permet au joueur de se déplacer très rapidement et d'être invulnérable face aux attaques 
+			au couteau. En revanche, le joueur ne peut pas emprunter d'échelles ou de tyroliennes en même temps que ce pouvoir, afin 
+			de ne pas déséquilibrer le jeu. Il laisse également une longue traînée de fumée derrière lui, qui lui fait perdre 
+			tout semblant de discrétion. D'un point de vue technique, l'attribut vitesse du joueur est temporairement accru, 
+			et des effets de post-processing sont appliqués à la caméra du joueur pour des raisons purement esthétiques (aberration 
+			chromatique, modification des tons de lumière...). Des particules de fumée sont placées sur la position du joueur, et 
+			disparaissent au bout de cinq secondes.
+
+			\begin{figure}[hbt!]
+				\centering
+				\includegraphics[scale=0.35]{speed.png}
+				\caption{Agonie d'un personnage empoisonné}
+			\end{figure}
+			\FloatBarrier
 		
 		
 
