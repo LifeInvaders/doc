@@ -3,19 +3,20 @@
     \subsubsection{Cahier des charges}
 
         \paragraph{Réalisation du multijoueur}
-        Afin de développer le cœur de notre jeu, le système permettant de connecter les joueurs ensemble, nous avons utilisé la framework Photon, et plus précisément 
-        sa version la plus aboutie, Photon Unity Network 2 (PUN2). \newline
-        Photon est un outil pour Unity qui joue le rôle de framework dans la création d'environnements multijoueurs. Il offre de nombreuses fonctionnalités commes:
-        
-        \begin{itemize}
-            \item Des serveurs dédiés à couverture mondiale
-            \item La création de lobbies permettant au joueurs de facilement se connecter à une partie
-            \item Un système RPC permettant la communication joueur-joueur.
-        \end{itemize}
 
-        Photon fonctionne grâce à un système de méthodes RPCs. Un joueur génère un message RPC qui est distribué par un serveur Photon aux autres joueurs selon un filtre. On peut donc facilement synchroniser divers paramètres essentiel à la réalisation d'un jeu multijoueur.\\
-        Dans le cadre de notre jeu, ce framework est nécessaire pour connecter les joueurs entre eux et synchroniser les déplacements des joueurs et de l'IA ainsi que certains évènement tels que le commencement d'une partie ou le partage des cible, mais également pour communiquer les actions réalisés par les joueurs (tel que l'éxecution d'une cible) à tout le lobby.
-        
+            Afin de développer le cœur de notre jeu, le système permettant de connecter les joueurs ensemble, nous avons utilisé la framework Photon, et plus précisément 
+            sa version la plus aboutie, Photon Unity Network 2 (PUN2). \newline
+            Photon est un outil pour Unity qui joue le rôle de framework dans la création d'environnements multijoueurs. Il offre de nombreuses fonctionnalités commes:
+            
+            \begin{itemize}
+                \item Des serveurs dédiés à couverture mondiale
+                \item La création de lobbies permettant au joueurs de facilement se connecter à une partie
+                \item Un système RPC permettant la communication joueur-joueur.
+            \end{itemize}
+
+            Photon fonctionne grâce à un système de méthodes RPCs. Un joueur génère un message RPC qui est distribué par un serveur Photon aux autres joueurs selon un filtre. On peut donc facilement synchroniser divers paramètres essentiel à la réalisation d'un jeu multijoueur.\\
+            Dans le cadre de notre jeu, ce framework est nécessaire pour connecter les joueurs entre eux et synchroniser les déplacements des joueurs et de l'IA ainsi que certains évènement tels que le commencement d'une partie ou le partage des cible, mais également pour communiquer les actions réalisés par les joueurs (tel que l'éxecution d'une cible) à tout le lobby.
+            
     
 
     \subsubsection{Première soutenance}
@@ -163,6 +164,7 @@
 
 
         \paragraph{Synchronisation du déroulé de partie}
+
             De la même manière, un système d'event a été mis en place permettant de synchroniser les différentes étapes du jeu, 
             avec une période de synchronisation des IA en début de partie, différentes manches et enfin une phase de fin avec les stats.
 
