@@ -1,5 +1,68 @@
 \subsection{Carte du jeu}
 
+\subsubsection{Cahier des charges}
+
+    \paragraph{Taille et topologie de la carte}
+        
+        La carte du jeu doit être parfaite. En effet, toutes les mécaniques 
+        (saut, échelles, course)
+        deviennent inutiles si elles sont implémentées sur une carte inadéquate (avoir la 
+        possibilité de grimper sur une carte plate est aussi inutile que frustrant).
+        A l'inverse, une carte adaptée aux possibilités de déplacement du joueur donne à ce dernier
+        l'impression de quelque chose de fini.
+        Une carte spacieuse et assez verticale (accidentée et/ou avec des maisons escaladables)
+        se présente donc comme la meilleure option, car elle est ainsi le moins restrictive possible.
+
+
+    \paragraph{Univers et design}
+
+        Le jeu se déroule dans un univers pirate, aux Caraïbes.
+        Les bâtiments doivent donc être d'inspiration hispanique,
+        mais paraître peu entretenus, signe d'une longue occupation 
+        pirate. La carte est une île, ce qui permet de justifier
+        la limite de carte facilement (océan). En revanche, certaines 
+        incohérences (skin de squelette, peut être des armes futuristes)
+        permettent d'inscrire le jeu dans un registre informel, et de 
+        rappeler que ce n'est qu'un jeu.
+        \\
+
+        \begin{figure}[!hbt]
+            \centering
+            \includegraphics[scale=0.18]{polygon_pirate.png}
+            \caption{Image de présentation de l'asset Polygon Pirate}
+        \end{figure}
+
+
+    \paragraph{Assets}
+
+        Tous ces éléments nous ont fait opter pour l'achat d'un asset graphique chez 
+        Synty Studios (POLYGON - Pirate Pack).
+        Ce dernier possède de nombreux avantages, comme sa grande diversité de prefabs et 
+        textures, ou encore son aspect "Low Poly", 
+        c'est-à-dire en polygones, qui donne un aspect moderne au jeu tout en diminuant la 
+        complexité des mesh (réduisant ainsi la 
+        puissance de calcul nécessaire au jeu).
+        \\ 
+
+        \begin{figure}[hbt!]
+            
+            \begin{subfigure}[b]{1\textwidth}
+                \center
+                \includegraphics[scale=0.27]{map.png} 
+                \caption{Vue aérienne de la carte}
+            \end{subfigure}
+            \vfill{}
+            \begin{subfigure}[b]{1\textwidth}
+                \center
+                \includegraphics[scale=0.25]{streets.png} 
+                \caption{Vue rapprochée de la carte}
+            \end{subfigure}
+            \caption{Avancement actuel de la carte}
+        \end{figure}
+        \FloatBarrier
+
+
+
 \subsubsection{Première soutenance}
 
     La carte étant un élément crucial du jeu, au même titre que les mécaniques, 
@@ -18,6 +81,7 @@
         \includegraphics[scale=0.42]{fly_view.png}
         \caption{Vue aérienne de la carte}
     \end{figure}
+    \FloatBarrier
 
     Ensuite, afin d’ajouter du relief à la carte, une colline a été créée. 
     Cette dernière s’étend sur environ un quart de la carte, et possède quatre 
@@ -33,6 +97,7 @@
         \includegraphics[scale=0.3]{hill.png}
         \caption{Colline de la carte, organisée par étages}
     \end{figure}
+    \FloatBarrier
 
 
     Enfin, l’architecture de la ville elle-même devait aussi avoir une influence 
@@ -51,19 +116,33 @@
     En outre, les nombreux NPC ainsi que les marchandises exposées au milieu des rues font aussi de bonnes diversions.
     Enfin, l'ajout d'escaliers offrant un second accès à la colline permettent non seulement de désengorger la butte, envahie par les NPC, mais aussi 
     de redynamiser la digue qui était jusque là exempte de tout intérêt : pas de bâtiments, pas de cachettes...
-
+    \\
     Mais la principale nouveauté est le mode nuit : en effet, il est désormais possible de passer du jour à la nuit grâce à de simples boutons-radios. 
     Le mode nuit applique des effets de post-processing à toutes les textures de la carte, et assombrissant les couleurs et en appliquant certains effets 
     visuels se traduisant en jeu par un environnement plus sombre (deonc nocturne). 
     Ce mode nuit permet de faire ressortir la beauté de la ville endormie, tout en ajoutant un côté angoissant aux parties,
     qui deviennent \textit{de facto} beaucoup plus animées.
-
     Il reste à peaufiner les détails, comme l'ajout de hautes herbes dans les rues, le placement de torches utilisant 
     la lumière dynamique (mode jour / nuit) ou encore le réajustement de petites erreurs de placements.
 
 \subsubsection{Dernière soutenance}
 
-    % à écrire
+    Une deuxième carte a été commencée, afin d'ajouter de l'intérêt au jeu. Cette dernière utilise le fort de la carte 
+    de démonstration de l'Asset (faite par Synty), que nous avons modifié, en ajoutant de nombreuses rampes d'accès ainsi qu'un tyrolienne, 
+    le nouveau mode de déplacement du jeu. Le quartier de pêcheurs sur la plage permet de créer une zone "urbaine", pour se 
+    cacher dans la foule, alors que le fort permet de prendre de la hauteur pour repérer sa cible. Une grande difficulté rencontrée sur 
+    cette carte est sa verticalité, qui requiert un nombre important d'escalier et de rampes d'accès, pour permettre la 
+    circulation des joueurs mais surtout des NPC dont les reègles de circulation sont très strictes (restrictions sur l'inclinaison 
+    du sol, sur la hauteur de saut et sur les objets de sol). L'accès au fort a dû être fortement restreint afin de ne garder 
+    que les parties les plus accessibles (parvis et cour intérieur).
+
+    \begin{figure}[hbt!]
+        \centering
+        \includegraphics[scale=0.22]{second_map.png}
+        \caption{Vue aérienne du fort de la seconde carte}
+    \end{figure}
+    \FloatBarrier
+
 
 
 

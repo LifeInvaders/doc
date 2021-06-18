@@ -32,8 +32,8 @@
 			\end{figure}
 
 		\paragraph{Organisation de partie}
-			L'organisation de partie concerne la création des scripts
-			et ressources permettant à chaque partie multijoueur de se dérouler suivant un schéma prédéterminé. Cela comprend le début et 
+			L'organisation de partie concerne la création des scripts et ressources permettant à 
+			chaque partie multijoueur de se dérouler suivant un schéma prédéterminé. Cela comprend le début et 
 			la fin de manche (choix du gagnant, présentation du classement
 			de fin de partie par exemple), le placement des éléments dynamiques de la scène,
 			les timers, le comptage des points, l'assignation des cibles...
@@ -118,8 +118,8 @@
             \begin{figure}[hbt!]
                 \centering
                 \begin{subfigure}[b]{0.3\textwidth}
-                    \includegraphics[scale=0.5]{white_outline.png} 
-                    \caption{Personnage au centre de l'écran en surbrillance}
+                    \includegraphics[scale=0.44]{white_outline.png} 
+                    \caption{Personnage en surbrillance}
                 \end{subfigure}
                 \hspace{150pt}
                 \begin{subfigure}[b]{0.3\textwidth}
@@ -128,7 +128,7 @@
                 \end{subfigure}
 
                 \begin{subfigure}[b]{0.3\textwidth}
-                    \includegraphics[scale=0.4]{death.png} 
+                    \includegraphics[scale=0.27]{death.png} 
                     \caption{Disparition des corps après mort}
                 \end{subfigure}
                 \caption{Système de verrouilage}
@@ -139,7 +139,7 @@
 
             \begin{figure}[hbt!]
                 \centering
-                \includegraphics[scale=0.3]{dissolve_shader.png}
+                \includegraphics[scale=0.29]{dissolve_shader.png}
                 \caption{Vue du shader créé depuis Shader Graph}
             \end{figure}
 
@@ -189,11 +189,12 @@
 				\centering
 				\includegraphics[scale=0.3]{timeline_hache.png}
 				\caption{Timeline du lancer de hache}
-			\end{figure}*
+			\end{figure}
 			\FloatBarrier
 
 
 		\paragraph{Système de manche}
+
 			Le système actuellement utilisé pour le déroulement d'une partie se base sur des manches. Le jeu se fait en deux phases:
 			\begin{itemize}
 				\item Une période de 'grâce' de 30 secondes où les joueurs attendent l'assignation d'une cible. Ils sont libres de se déplacer, pour se cacher par exemple.
@@ -203,12 +204,15 @@
 		
 
 		\paragraph{Système de mort}
+
 			Joueurs comme IA peuvent être tués. Dans le cas d'un joueur, un système de mort a été mis en place. Ainsi,
 			quand le joueur se fait tuer, son personnage est désactivé temporairement et il rentre
 			en mode "spectateur". Il peut se balader sur la map, mais il ne peut en aucun cas interagir avec l'environnement,
 			et il n'est pas visible des autres joueurs. Une fois la manche terminé, le joueur réapparait aléatoirement sur la map.
 
+
 		\paragraph{Système de point}
+
 			Un système de point a également été implémenté. Il fonctionne de la façon suivante:
 				-Tuer sa cible rapporte des points. le premier joueur tuant sa cible gagne plus de point, les autres en gagne de moins en moins.
 				-Tuer une IA fait perdre des point! Il faut donc faire attention à ne pas tuer n'importe qui. Celà encourage la réflexion et pas simplement un carnage afin de trouver sa cible.
@@ -217,6 +221,7 @@
 				-Une autre façon de gagner des points et d'être encore en vie à la fin d'une manche.
 			Tous ces éléments permettent de déterminer le classement de la partie.
 	
+
 		\paragraph{Système de fin de partie}
 
 			Finir une partie est tout un processus. Il faut d'abord désactiver le mouvement des joueurs.
@@ -229,3 +234,79 @@
 
 
 		\paragraph{Cinemachine}
+
+
+	\subsubsection{Dernière soutenance}
+
+		\paragraph{Correction de bugs}
+			
+			Lors de cette dernière période, nous avons cherché et supprimé certains bugs qui avaient notamment lieu au niveau des objets comme les échelles ou les bancs. 
+			Certains étaient liés à des erreurs de code, et d'autres à une utilisation de certains objets à des endroits inadaptés.
+			Les échelles ont été améliorées, ainsi que les lumières (qui recontraient de gros problèmes) et le système de 
+			sélection, dont le fonctionnement était un peu aléatoire.
+
+		\paragraph{Ajout des tyroliennes}
+
+			Cependant, il nous manquait un élément présent dans beaucoup de jeux: une tyrolienne, permettant de laisser la 
+			gravité faire son travail pour se déplacer d'un point à un autre. Nous avons donc rajouté un asset permettant 
+			de créer des cordes, et avons créé un objet tyrolienne comprenant tous les prefabs et scripts nécéssaires.
+
+			\begin{figure}[hbt!]
+				\centering
+				\includegraphics[scale=0.22]{zipline.png}
+				\caption{Vue de la tyrolienne de l'île de Tortuga}
+			\end{figure}
+			\FloatBarrier
+
+			Ces dernières téléportent le joueur au point de départ, désactivent 
+			sa gravité et son contrôleur, puis lui appliquent des transformations 
+			successives dans la direction du point d'arrivée. Il est également possible 
+			de s'en extraire en sautant, ce qui provoque une chute suivie d'une animation 
+			d'amortie à l'arrivée.
+
+		\paragraph{Déguisement}
+
+			Le mode déguisement est un pouvoir qui permet au joueur de prendre pendant une dizaine de secondes l'apparence 
+			d'un personnage (joueur ou non) à proximité. Ce pouvoir permet de fuir son agresseur, et se montre très pratique 
+			en particulier lorsque ce dernier vous a aperçu et est trop proche de vous pour avoir accès à la boussole. 
+			Le jeu caste aux alentours les personnages, et retourne l'apparence (matériau/texture + mesh) du 
+			personnage le plus proche s'il existe, et d'un personnage au hasard sinon.
+
+		\paragraph{Pouvoirs}
+
+			La nouveauté majeure de cette troisième soutenance est la possibilité d'utiliser des pouvoirs, actuellement au 
+			nombre de quatre, afin de choisir un avantage majeur au cours de la partie. Les pouvoirs permettent de diversifier 
+			le jeu et de proposer une expérience de jeux adaptée à tous en fonction de leurs compétences.
+
+		\paragraph{Bombe de fumée}
+
+			La bombe de fumée est, comme son nom tend à l'indiquer, un objet qui active des particules autour d'un joueur lui 
+			permettant de créer une confusion afin de se retirer ou d'attaquer discrètement. Son grand intérêt réside dans le fait 
+			qu'elle paralyse tous les personnages, NPC comme joueurs (sauf le lanceur, bien évidemment) jusqu'à dissipation de la fumée. 
+			C'est donc un atout majeur de fuite plus que d'attaque.
+
+		\paragraph{Poison}
+
+			Le poison n'est pas vraiment un atout en jeu, car il nécéssite de suivre sa victime et de la tuer comme pour une 
+			élimination classique. Cependant, lors de l'élimination de la cible, cette dernière donne plus de points, car son 
+			élimination est discrète.
+
+		\paragraph{Sprint}
+	
+			Le pouvoir de sprint permet au joueur de se déplacer très rapidement et d'être invulnérable face aux attaques 
+			au couteau. En revanche, le joueur ne peut pas emprunter d'échelles ou de tyroliennes en même temps que ce pouvoir, afin 
+			de ne pas déséquilibrer le jeu. D'un point de vue technique, l'attribut vitesse du joueur est temporairement accru, 
+			et des effets de post-processing sont appliqués à la caméra du joueur pour des raisons purement esthétiques (aberration 
+			chromatique, modification des tons de lumière...).
+
+		\paragraph{Lancer de couteaux}
+
+			Le pouvoir du lancer de couteaux est de loin celui ayant été le plus long à mettre en oeuvre. Lorsque l'assassin 
+			verrouille sa cible, il peut lui lancer un couteau jusqu'à 15 mètres (contre 2 mètres pour les attaques classiques).
+			La cible touchée se met à boiter, voit sa vitesse réduite et ne peut ni courir, ni emprunter d'échelles pendant une certaine 
+			période donnant à son assaillant le temps de l'achever. D'un point de vue technique, une refonte totale des animations *
+			a eu lieu, afin que les personnages boiteux aient une animation spécifique. De nombreux nouveaux cas pour la course, les 
+			échelles et les tyroliennes ont également dû être gérés. 
+		
+		
+
