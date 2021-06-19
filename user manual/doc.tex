@@ -1,0 +1,76 @@
+\documentclass[french]{article}
+
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={150mm,240mm},
+ left=30mm,
+ top=30mm,
+ }
+
+
+\usepackage{helvet}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[french]{babel}
+\usepackage{comment}
+\usepackage{subcaption}
+\usepackage{subfiles}
+\usepackage{graphicx}
+\usepackage{diagbox}
+\usepackage{hyperref}
+\usepackage[table,xcdraw]{xcolor}
+% \usepackage{minted}
+\usepackage{placeins}
+
+\usepackage{fancyhdr}
+
+
+
+\graphicspath{ {./img/} }
+
+\title{\fontfamily{phv}\selectfont \Huge \textbf{Panic At Tortuga}}
+\author{\fontfamily{phv}\Huge{Manuel d'installation}}
+\date{\fontfamily{phv}\selectfont Juin 2021}
+
+\begin{document}
+
+\begin{titlepage}
+    \maketitle
+    
+    \thispagestyle{empty}
+    % {\fontencoding{T1}\fontfamily{calligra}\selectfont the font is temporarily changed}
+    \vspace{10pt}
+    \begin{figure}[hbt!]
+        \centering
+        \includegraphics[scale=0.43]{logo.png}
+    \end{figure}
+    \vspace{10pt}
+
+    \begin{figure}[hbt!]
+        \centering
+        \includegraphics[scale=0.84]{logo_lifeinvaders_copie.png}
+    \end{figure}
+\end{titlepage}
+
+% ////////////////////////////////////////////////
+% ////////////////////////////////////////////////
+% ////////////////////////////////////////////////
+
+
+
+\pagestyle{fancy}
+\lhead{Panic At Tortuga}
+\fancyhead[C]{Avril 2021}
+\rhead{LifeInvaders Production}
+
+\newpage
+\section{Pré-lancement}
+\subfile{sections/menus.tex}
+\section{Déroulement d'une partie}
+\subfile{sections/game.tex}
+\section{Paramètres}
+\subfile{sections/settings.tex}
+
+\end{document}
