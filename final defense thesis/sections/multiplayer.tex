@@ -183,6 +183,36 @@
 
     \subsubsection{Dernière soutenance}
 
-        \paragraph{Synchronisation des animations}
-
-            % à remplir
+        \paragraph{Synchronisation des animations de mort}
+			
+			Les animations de mort, créés par Dov, fonctionnent à présent en multijoueur. Un meurtre est maintenant très visible et peu discret!
+			Le tueur et sa victime en particuliers profitent d'un point de vue privilégié sur cette animation avec une cinématique dynamique à l'aide de Cinémachine.
+			De plus l'assassin obtient une immunité temporaire le temps de commettre l'acte, mais ce répit n'est que temporaire...
+			
+		\paragraph{Synchronisation des zones de discussion}
+			
+			Encore une fois, le travail de Dov est maintenant fonctionnel sur les serveurs Photon! Il est donc possible pour les joueurs de "camoufler" leur présence dans ces zones.
+			Il est même possible d'avoir plusieurs joueur parlant dans la même zone! Bien sûr, les assassinats sont toujours possible sur les PNJs et joueurs dans la zone, rester immobile
+			n'est donc pas forcément la meilleure idée dans toutes les situations.
+			
+	    \paragraph{Amélioration du système de synchronisation des PNJ}
+			
+			Le système de synchronisation passe d'une horloge globale qui dirige le départ de chaque PNJ à un système d' "horloge interne", qui permet de démarrer/arrêter
+			chaque personnage de façon individuel. Cela est particulièrement utile pour l'implémentation des zones de discussion, mais aussi pour organiser un "départ différé" de l'IA.
+			En effet, synchroniser simultanément plus d'une centaine de personnages n'est pas une très bonne idée. Ainsi, il est maintenant possible de le faire sur une plage de temps
+			plus large, ce qui permet d'éviter les problèmes de bande passante et certaines limitations de Photon.
+		
+		\paragraph{Implémentation des pouvoirs en multijoueur}
+		
+			Les pouvoirs sont maintenant présent en jeu! les 4 pouvoirs (lancer de couteau, déguisement, vitesse, et poison) sont tous paraitement fonctionnels et utilisable sur les PNJs
+			comme sur les autres joueurs! Un menu de séléction de pouvoir a aussi été implémenté, ainsi qu'une option permettant de choisir un pouvoir au hasard et un timeout qui éxécute ce choix
+			automatiquement si le joueur ne le fait pas manuellement au bout d'un certain temps.
+			
+		\paragraph{Implémentation de la scène de fin de jeu}
+		
+			Le jeu se termine maintenant de façon beaucoup plus satisfaisante avec l'implémentation en multijoueur d'une petite cinématique de fin de jeu, qui montre un classement ainsi
+			que les pires joueurs de la partie! Ont été également intégrés les animations de victoire.
+		
+			
+		
+		
