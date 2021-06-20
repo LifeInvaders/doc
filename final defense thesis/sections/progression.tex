@@ -1,6 +1,8 @@
 \subsection{Progression}
 
+    \vspace{0.5cm}
     \subsubsection{Première soutenance}
+    \vspace{0.5cm}
 
         Le système de progression, qui reste pour l'instant une tâche secondaire, a tout de même convenablement avancé. En effet même s'il n'y a pas 
         encore de mécanique de jeu permettant à ce système de prendre sens, l'objectif principal pour cette première soutenance a été réalisé: le système 
@@ -8,6 +10,7 @@
         
 
         \paragraph{Système de sauvegarde}
+
         Un système de sauvegarde complet a été implémenté. Une classe "PlayerDatabase" a été créée et permet de stocker l'ensemble des variables que nous 
         souhaitons sauvegarder. Ce système est utilisé non seulement pour sauvegarder la progression du joueur, mais il se trouve qu'il a également une grande 
         utilité pour sauvegarder d'autres paramètres, comme par exemple la persistence du changement des contrôles effectués par le joueur (cf. menu d'accueil). 
@@ -19,20 +22,23 @@
 
 
         \paragraph{Contenu débloquable}
+
         Même si le système de progression n'a pas encore été créé, nous avons déjà réfléchi sur la "récompense" de ce système de progression. Il serait donc 
         intéressant d'explorer la possibilité de débloquer des effets "cosmétiques" qui serait visible dans le lobby\footnote{Cf. Multijoueur}. Un système de 
         customisation de personnage a été créé, et nous avons pour objectif de permettre au joueur de débloquer ces éléments de customisation.
 
 
         \paragraph{Système de customisation}
+
         Même si cette mécanique est encore basique, le joueur a la possibilité de choisir l'apparence de son personnage dans le menu d'accueil
         \footnote{Cf. Menu d'accueil}. Cette dernière sera vue des autres joueurs du lobby. Le fonctionnement est le suivant: chaque caractéristique est associée 
         à une variable. Ces variables composent un code unique associé à une combinaison spécifique qui sera alors affichée. De plus, ces variables sont 
         sauvegardés et le choix est persistant (sauvegardé dans un fichier). Avant la fin du projet, l'objectif est de bloquer l'accès à certains éléments de 
         customisation, et de permettre au joueur de les débloquer grâce à sa progression.
 
-	
-	\subsubsection{Deuxième soutenance}
+    \vspace{0.5cm}
+    \subsubsection{Deuxième soutenance}
+    \vspace{0.5cm}
 
         Le système de progression a peu avancé car nous l'avons trouvé d'une importance moindre que le multijoueur ou l'IA.
         Cependant, un système d'expérience, acquise à la fin de chaque partie en fonction du nombre de
@@ -40,11 +46,15 @@
         acquérir une certaine quantité d'expérience, calculé en fonction du niveau actuel. Plus le niveau est élevé,
         plus l'expérience demandé est élevé. Mais ce système n'a pas encore d'utilité dans le cadre de la progression.
 
-
-	\subsubsection{Dernière soutenance}
+    \vspace{0.5cm}
+    \subsubsection{Dernière soutenance}
+    \vspace{0.5cm}
 
         Le système de progression est fonctionnel, et inclue la sélection / sauvegarde des apparences, ainsi qu'un système de niveaux basé sur des points d'expérience 
         gagnés à chaque fin de partie. Il permet deux choses : permettre au joueur de choisir un skin qui lui correspond, et activer 
         le système de récompense du cerveau après chaque partie gagnée, afin de rendre le jeu un peu addictif (oui, c'est mal). Le joueur a le sentiment de progresser
-		en débloquant des éléments cosmétiques et peu ainsi afficher fièrement sa supériorité à tout les joueurs. Dans l'état final, gagner des niveaux permet de débloquer
-		des animations de victoire.
+        en débloquant des éléments cosmétiques et peu ainsi afficher fièrement sa supériorité à tout les joueurs. Dans l'état final, gagner des niveaux permet de débloquer
+        des animations de victoire.
+
+        Le fichier de sauvegarde du jeu, qui contient toutes les configurations persistantes du joueur, est chiffré pour éviter que des joueurs 
+        malveillants ou trop curieux essayent de changer leur niveau ou de s'appliquer des emotes qu'ils n'ont pas encore débloqué.

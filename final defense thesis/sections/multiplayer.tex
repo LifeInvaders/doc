@@ -1,6 +1,8 @@
 \subsection{Réseau}
 
+    \vspace{0.5cm}
     \subsubsection{Cahier des charges}
+    \vspace{0.5cm}
 
         \paragraph{Réalisation du multijoueur}
 
@@ -18,8 +20,9 @@
             Dans le cadre de notre jeu, ce framework est nécessaire pour connecter les joueurs entre eux et synchroniser les déplacements des joueurs et de l'IA ainsi que certains évènement tels que le commencement d'une partie ou le partage des cible, mais également pour communiquer les actions réalisés par les joueurs (tel que l'éxecution d'une cible) à tout le lobby.
             
     
-
+    \vspace{0.5cm}
     \subsubsection{Première soutenance}
+    \vspace{0.5cm}
 
         \paragraph{Connexion aux serveurs Photon}
 
@@ -79,8 +82,9 @@
             A la fin du timer, le Master Client charge la map de jeu, qui est synchronisé avec tout les joueurs.
 
 
-
+    \vspace{0.5cm}
     \subsubsection{Deuxième soutenance}
+    \vspace{0.5cm}
 
         \paragraph{Synchronisation du lancement de partie}
         
@@ -118,23 +122,26 @@
             à l'IA de se déplacer sur la map, il faut maintenant que ce mouvement soit propagé de façon quasi-identique à tout les joueurs.
             Pour cela, plusieurs méthodes ont été envisagées:
 
-            - L'utilisation de Photon Transform View, comme pour les joueurs. Ce système a vite montré ses limites, car inadapté à la synchronisation
-            d'un grand nombre d'objets, fonctionant sur la base d'un envoi pseudo-continu d'informations. Ainsi de nombreux problèmes apparaissaient,
-            et la synchronisation des mouvement en a souffert. 
+            \begin{itemize}
+                \item L'utilisation de Photon Transform View, comme pour les joueurs. Ce système a vite montré ses limites, car inadapté à la synchronisation
+                d'un grand nombre d'objets, fonctionant sur la base d'un envoi pseudo-continu d'informations. Ainsi de nombreux problèmes apparaissaient,
+                et la synchronisation des mouvement en a souffert. 
 
-            - Calcul de chemin client-side à partir du même point. L'idée est la suivante: le master client calcule un point, qui est la destination
-            de l'IA, et la partage aux autres joueurs. Puis chaque joueur calcule le chemin pris par l'IA pour y arriver. Cela réduit considérablement la
-            quantité d'information échangée, mais un autre problème se pose: le calcul de chemin pour les NavMesh Agents n'est pas déterministe. Ainsi le
-            chemin calculé par chaque client à partir du même point n'est pas le même, ce qui entraîne également une désynchronisation de la position.
+                \item Calcul de chemin client-side à partir du même point. L'idée est la suivante: le master client calcule un point, qui est la destination
+                de l'IA, et la partage aux autres joueurs. Puis chaque joueur calcule le chemin pris par l'IA pour y arriver. Cela réduit considérablement la
+                quantité d'information échangée, mais un autre problème se pose: le calcul de chemin pour les NavMesh Agents n'est pas déterministe. Ainsi le
+                chemin calculé par chaque client à partir du même point n'est pas le même, ce qui entraîne également une désynchronisation de la position.
 
-            - Enfin, le choix retenu est le calcul d'un chemin entier par le Master Client, qui envoie ensuite l'intégralité de ce chemin aux autres joueurs.
-            Ainsi le chemin est le même pour tout le monde, mais l'envoi des points se fait de façon discrète: on envoit uniquement l'array de positions généré
-            par le Master Client. Ce système permet d'avoir une synchronisation satisfaisante des déplacement et une utilisation minime de la bande passante.
-
-            De plus, une fois le premier chemin créé et partagé aux joueurs de la salle, il est nécessaire d'activer le mouvement des PNJ de façon la plus simultanée possible.
-            Le processus est le même que celui permettant de synchroniser les timers : on crée une propriété de la salle qui indique le moment exact où
-            les IAs sont activés, une fonctionnalité de Photon permettant l'accés à une valeur identique sur tout les clients au même instant (PhotonNetwork.Time).
-
+                \item Enfin, le choix retenu est le calcul d'un chemin entier par le Master Client, qui envoie ensuite l'intégralité de ce chemin aux autres joueurs.
+                Ainsi le chemin est le même pour tout le monde, mais l'envoi des points se fait de façon discrète: on envoit uniquement l'array de positions généré
+                par le Master Client. Ce système permet d'avoir une synchronisation satisfaisante des déplacement et une utilisation minime de la bande passante.
+            
+            \end{itemize}
+            
+                De plus, une fois le premier chemin créé et partagé aux joueurs de la salle, il est nécessaire d'activer le mouvement des PNJ de façon la plus simultanée possible.
+                Le processus est le même que celui permettant de synchroniser les timers : on crée une propriété de la salle qui indique le moment exact où
+                les IAs sont activés, une fonctionnalité de Photon permettant l'accés à une valeur identique sur tout les clients au même instant (PhotonNetwork.Time).
+    
 
         \paragraph{Synchronisation des assassinats et des morts}
 
@@ -180,8 +187,9 @@
             \caption{Démonstration du chat Photon}
         \end{figure}
 
-
+    \vspace{0.5cm}
     \subsubsection{Dernière soutenance}
+    \vspace{0.5cm}
 
         \paragraph{Synchronisation des animations de mort}
 			

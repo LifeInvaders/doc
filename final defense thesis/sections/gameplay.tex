@@ -1,6 +1,8 @@
 \subsection{Mécaniques de jeu}
 
+	\vspace{0.5cm}
 	\subsubsection{Cahier des charges}
+	\vspace{0.5cm}
 
 		\paragraph{Objectif du jeu}
 			Chaque joueur se voit attribuer une cible et est lui-même la cible d'un autre joueur.
@@ -43,8 +45,9 @@
 			au premier joueur ayant abattu sa cible ou à un joueur ayant survécu un certain temps sans se faire tuer.
 
 
-			
+	\vspace{0.5cm}		
 	\subsubsection{Première soutenance}
+	\vspace{0.5cm}
 
         \paragraph{Environnement}
 
@@ -135,8 +138,9 @@
 			\FloatBarrier
 
 
-
+	\vspace{0.5cm}
 	\subsubsection{Deuxième soutenance}
+	\vspace{0.5cm}
 
 		\paragraph{Système de verrouillage}
 
@@ -205,11 +209,13 @@
 		\paragraph{Système de point}
 
 			Un système de point a également été implémenté. Il fonctionne de la façon suivante:
-				-Tuer sa cible rapporte des points. le premier joueur tuant sa cible gagne plus de point, les autres en gagne de moins en moins.
-				-Tuer une IA fait perdre des point! Il faut donc faire attention à ne pas tuer n'importe qui. Celà encourage la réflexion et pas simplement un carnage afin de trouver sa cible.
-				-Tuer la cible de quelqu'un d'autre ne fait pas perdre de points, mais un système de compensation a été mis en place. Ainsi, se faire voler sa cible par un autre joueur apporte des points de compensation. Encore une fois, il n'est donc pas dans l'intérêt 
+			\begin{itemize}
+				\item Tuer sa cible rapporte des points. le premier joueur tuant sa cible gagne plus de point, les autres en gagne de moins en moins.
+				\item Tuer une IA fait perdre des point! Il faut donc faire attention à ne pas tuer n'importe qui. Celà encourage la réflexion et pas simplement un carnage afin de trouver sa cible.
+				\item Tuer la cible de quelqu'un d'autre ne fait pas perdre de points, mais un système de compensation a été mis en place. Ainsi, se faire voler sa cible par un autre joueur apporte des points de compensation. Encore une fois, il n'est donc pas dans l'intérêt 
 				des joueurs de tuer le premier venu
-				-Une autre façon de gagner des points et d'être encore en vie à la fin d'une manche.
+				\item Une autre façon de gagner des points et d'être encore en vie à la fin d'une manche.
+			\end{itemize}
 			Tous ces éléments permettent de déterminer le classement de la partie.
 	
 
@@ -237,8 +243,9 @@
 			proposer des cinématiques plus vivantes, avec des déplacements et des focus.
 
 
-
+	\vspace{0.5cm}
 	\subsubsection{Dernière soutenance}
+	\vspace{0.5cm}
 
 		\paragraph{Correction de bugs}
 			
@@ -329,20 +336,23 @@
 			\begin{figure}[hbt!]
 				\centering
 				\includegraphics[scale=0.35]{speed.png}
-				\caption{Agonie d'un personnage empoisonné}
+				\caption{Pouvoir de sprint}
 			\end{figure}
 			\FloatBarrier
 
 		\paragraph{Tutoriel}
 
 			Afin que les nouveaux joueurs découvrent le jeu, un tutoriel a été développé. Ainsi, au premier lancement du jeu, lorsque le 
-			joueur clique sur le bouton jouer, une fenêtre apparaît pour lui proposer de jouer le tutoriel. Des voix générées par l'IA 
-			Watson d'IBM guident le joueur, pour lui apprendre les contrôles et les actions.
+			joueur clique sur le bouton jouer, une fenêtre apparaît pour lui proposer de jouer le tutoriel. Dans ce dernier, le Capitaine Octopus vous guide 
+			en vous apprenant à contrôler le personnage et à supprimer vos adversaires. la création du tutoriel nous a semblé être une bonne façon de nous 
+			démarquer, et de compléter un guide d'utilisation papier non-interactif.
+			La voix du capitaine Octopus a été générée par Watson, l'intelligence artificielle d'IBM, au travers de son outil de démonstration gratuite 
+			en ligne \textit{Watson text-to-speech}.
+
 
 		\paragraph{Emotes}
 
 			Pour améliorer le système de progression, des emotes ont été rajoutées. Le joueur a donc maintenant la possibilité de débloquer des 
-			danses de victoires, affichées en fin de partie. Ces de
-		
-		
-
+			danses de victoires, affichées en fin de partie. Ces dernières sont affichées en fin de partie, au moment de la présentation des vainqueurs. 
+			Il existe 13 emotes, basées principalement sur des gestes simples (lever le bras, sauter en l'air) ou des danses comme la samba ou la macarena. 
+			Les emotes sont stockées dans le fichier de sauvegarde personnalisé du jeu, afin d'être persistentes.

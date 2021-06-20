@@ -1,6 +1,8 @@
 \subsection{Interface utilisateur}
     
+    \vspace{0.5cm}
     \subsubsection{Cahier des charges}
+    \vspace{0.5cm}
 
         Afin de faire l’UI, nous avons majoritairement utilisé l’outil canvas de Unity. 
         Pour la direction artistique, compte tenu du thème de notre jeu portant sur les pirates, 
@@ -31,7 +33,13 @@
         \end{itemize}
 
 
+    \vspace{0.5cm}
     \subsubsection{Première soutenance}
+    \vspace{0.5cm}
+
+        Les interfaces sont une partie importante de tout jeu. Elles permettent de donner au joueur plus de contrôle sur son expérience 
+        et de présenter les informations nécessaires de façon claire, facilement accessible et si possible esthétique. Un progrès 
+        important a été fait quant à la création d'interfaces.
         
         \paragraph{Tableau des scores}
 
@@ -39,8 +47,72 @@
             Pour fournir ces informations, nous avons opté pour un tableau des scores disponible à n’importe quel moment de la partie. Ce tableau permet également un classement simple, clair et rapide des joueurs en fonction de leurs points.
             La difficulté principale de ce tableau des scores est la synchronisation entre un script coté client qui doit actualiser à chaque pression de la touche TAB le score ainsi que la présence de chaque joueur et la récupération des données de chaque Player, mises à jour en temps réel sur le serveur.
 
+        \paragraph{HUD}
 
+            Le HUD est une interface présente tout le temps à l'écran, et permettant d'afficher 
+            les informations relatives au joueur et à l'avancement de la partie directement en jeu. 
+            Ce dernier a donc pour obligation d'être complet (au moins : informations sur la cible,
+            points, temps de jeu restant) et assez discret, pour ne pas avoir l'impression 
+            de jouer à travers un hublot. C'est pourquoi nous avons décidé de mettre les 
+            éléments dans les coins le plus possible, afin de ne pas déranger les joueurs.
+            Les informations fournies par le HUD n'étant pas utiles au stade actuel du jeu 
+            (encore assez expérimental), Paul a décidé de se focaliser sur la carte et sur la manipulation
+            générale des scripts Unity avant de le commencer, et ce dernier n'est donc pas 
+            encore implémenté dans les builds de la première soutenance.
+
+
+        \paragraph{Menu Principal}
+
+            Le menu d'accueil est la première chose que le joueur voit en lançant le jeu.
+            Celui-ci est actuellement entièrement implémenté et fonctionnel. Cependant il continuera 
+            d'évoluer au fil du projet et de ses besoins.
+            Le thème du menu principal doit être représentatif du jeu. Il doit donc bien entendu 
+            afficher la couleur dès le lancement: ceci est un jeu de pirates.
+            Le fond, les couleurs, la musique... Y est également présent le logo du 
+            groupe ainsi que celui du jeu.
+            Plusieurs options sont disponibles. Le joueur peut tout d'abord se connecter 
+            au serveur Photon. Il accède ainsi à un menu lui permettant de rejoindre une 
+            salle. Il peut également y modifier son pseudo, qui sera affiché aux autres 
+            joueurs. Seule la fonction "Quick Play" a été implémentée (cf. multijoueur) mais 
+            l'objectif à long terme est d'ajouter une liste ainsi qu'un menu de création de 
+            salles. Cette partie du menu principal a été réalisée par Julien.
+            Il est également possible de modifier les paramètres de jeu comme la 
+            résolution, le mode plein écran, le volume, ou encore remapper les touches de 
+            contrôles. Ces changements sont sauvegardés (cf. système de sauvegardes).
+            Un menu de personnalisation de personnage a également été implémenté 
+            (cf. système de progression). On peut y modifier certaines caractéristiques, 
+            comme la couleur des vêtements ou de la peau. Un aperçu du modèle est disponible 
+            (et peut pivoter grâce à la souris). Les paramètres, ainsi que ce menu, ont été 
+            réalisés par Harrys.
+            Enfin, on retrouve (évidemment) un bouton quitter pour fermer l'application.
+            
+            \begin{figure}[hbt!]
+                \centering
+                \captionsetup{justification=centering}
+                \begin{subfigure}[b]{0.3\textwidth}
+                    \includegraphics[scale=0.1]{mainmenu.png} 
+                    \caption{Menu principal}
+                \end{subfigure}
+                \hspace{150pt}
+                \begin{subfigure}[b]{0.3\textwidth}
+                    \includegraphics[scale=0.1]{settingsmenu.jpg} 
+                    \caption{Paramètres}
+                \end{subfigure}
+                \begin{subfigure}[b]{0.3\textwidth}
+                    \includegraphics[scale=0.1]{charcustom.jpg} 
+                    \caption{Apparence}
+                \end{subfigure}
+                \begin{subfigure}[b]{0.3\textwidth}
+                    \includegraphics[scale=0.1]{photonmenu.png} 
+                    \caption{Menu multijoueur}
+                \end{subfigure}
+                \caption{Différents affichages du menu d'accueil}
+            \end{figure}
+
+
+    \vspace{0.5cm}
     \subsubsection{Deuxième soutenance}
+    \vspace{0.5cm}
     
         \paragraph{Menu principal}
         
@@ -52,7 +124,10 @@
             Un début de boussole a aussi implémenté, mais n'est pas accessible en jeu car encore au stade de développement. Cette dernière, 
             présente en bas à droite de l'écran, permet de localiser sa cible (avec une précision proportionnelle à la distance à la cible).
 
+
+    \vspace{0.5cm}
     \subsubsection{Troisième soutenance}
+    \vspace{0.5cm}
     
         \paragraph{Menu Principal}
         
