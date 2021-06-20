@@ -80,3 +80,20 @@
             \end{figure}
             \FloatBarrier
         
+        \paragraph{Liste des joueurs et des scores}
+
+            Le scoreboard, développé par Julien, permet de connaitre en temps réel les scores, pings et pseudos des autres joueurs de la partie. 
+            Il s'appuie sur une liste de joueurs qui est mise à jour à chaque assassinat puis transmise aux joueurs qui ouvrent cette liste. 
+            La difficulté du scoreboard était de rajouter un système pour trier les joueurs par score décroissant, car cela nécéssite de 
+            détruire tous les enfants de la liste (qui correspondent à ses  entrées), et les rajouter dans l'ordre à chaque fois.
+
+        \paragraph{Menu de sélection de partie}
+
+            Le menu de sélection de partie permet de choisir de rejoindre une room publique ou privée. Pour rejoindre une room publique, le jeu 
+            connecte simplement le joueur à n'importe quelle room ouverte. En revanche, le système de parties privées est bien plus complexe :
+            pour créer une partie privée, le jeu génère une clé (5 chiffres), qui correspond au nom de la room, et masque cette room afin qu'elle 
+            ne soit pas joignable par les joueurs publiques. Ensuite, les personnes qui veulent rejoindre cette partie doivent entrer la clé pour 
+            indiquer au serveur quelle room ils veulent rejoindre. En définitive, les parties privées sont donc de simples parties cachées des autres 
+            joueurs et accessibles avec un code.
+
+        
