@@ -96,3 +96,27 @@
         le leur, ce qui posait des problèmes car les IA s'arrêtaient quelques instants pour calculer leur destination. Cette dernière 
         est maintenant calculée lorsqu'un avancement de deux tiers est atteint sur le trajet. Cela permet d'éviter ces moments 
         d'inactivité. Le mode de recherche a aussi connu de très légères optimisations.
+
+        \paragraph{HUD}
+
+        Lors d’une partie, un joueur a besoin d’avoir des informations en temps réel qui lui sont indispensables afin 
+         mener à bien sa victoire et sa domination sur les autres joueurs. On retrouve par exemple dans call of duty, 
+         l’affichage de la vie par le rougissement de l’écran ou alors l’affichage des balles et de l’arme sélectionnée. 
+         Dans mario par l’exemple, en haut à gauche; le joueur peut lire le nombre de vie qu’il lui reste et donc adapter 
+         son style de jeu ( dangereux ou pas). Dans notre jeu, c’est à ce moment là que l’UI intervient. Tout comme mario 
+         ou call of duty, notre UI intègre un HUD composé de plusieurs elements. Dans panic at tortuga, le joueur a le 
+         choix entre plusieurs pouvoir qui consistent tous en une action différente, une portée différente et un impact 
+         différent sur la cible. Tout comme mario, afin d’adapter son style de jeu, le joueur a besoin de savoir quel 
+         pouvoir est actuellement sélectionné. Pour répondre à cette problématique, un affichage en temps réel du pouvoir 
+         sélectionné est disponible sur l’écran du joueur, en bas à gauche. En complément de l’affichage du pouvoir 
+         sélectionné, une autre problématique se posait. Le but principale d’une partie est de tuer sa cible le plus de fois 
+         possible. Il faut donc montrer au joueur une photo de sa cible. Pour faire ceci, et afin d’avoir un résultat assez 
+         esthétique, nous avons opté pour un affichage en premier plan d’un personnage animé, que l’on pourrait habiller et 
+         adapter à souhait en fonction de la cible du joueur. Cependant, dans ce genre de jeu, il y a un aspect qui revient 
+         souvent, et ceci peu importe le jeu. Dans need for speed, les joueurs comparent le temps de leur course tandis que 
+         dans banjo et kazoie, ils comparent le nombre de notes récupérées. Cet aspect est le côté compétitif qui opposent 
+         tous les joueurs, et ceci toutes plateformes confondues. Afin d’offrir aux joueurs une meilleure visibilité sur la 
+         partie et sur leur performance actuelle dans le jeu, notre équipe a opté pour un système de tableau des scores 
+         comprenant l’affichage du score du joueur, son nombre de mort ainsi que son nombre de kill sur les autres joueurs. 
+         Afin de rendre ce tableau plus ergonomique et plus simple de compréhension, un algorithme tri a chaque ouverture 
+         du tableau les différentes entrées présentes. 
