@@ -1,21 +1,71 @@
-\paragraph{Objectifs}
+\subsection{Objectifs}
 
-    L'objectif du jeu est de traquer sa cible, pointée par la boussole en bas à droite de l'écran, et l'éliminer. Cependant, 
-    vous êtes vous aussi la cible d'un joueur, et devez donc fuir votre agresseur. Quatre pouvoirs sont mis à votre disposition : 
-    choisissez celui qui vous convient le mieux, afin de prendre l'avantage sur les autres joueurs.
+    \paragraph{Objectifs}
+
+        L'objectif du jeu est de traquer sa cible, pointée par la boussole en bas à droite de l'écran, et l'éliminer. Cependant, 
+        vous êtes vous aussi la cible d'un joueur, et devez donc fuir votre agresseur. Quatre pouvoirs sont mis à votre disposition : 
+        choisissez celui qui vous convient le mieux, afin de prendre l'avantage sur les autres joueurs.
+
+
+    \paragraph{Système de points}
+
+        Les points sont calculés en fonction de vos assassinats : tuer sa cible rapporte des points, l'empoisonner en rapporte plus, 
+        mais tuer un personnage non-joueur en fait perdre, et tuer la cible de quelqu'un d'autre fait gagner des points à cette personne. 
+        A la fin de la partie, les trois premiers joueurs sont affichés, ainsi qu'un tableau des scores.
+            
+        
+\subsection{Contrôles et menu}
+
+
+    \paragraph{Contrôles}
+
+        Les contrôles de jeu, modifiables depuis le menu paramètres, sont par défaut Z/Q/S/D pour 
+        avancer/gauche/reculer/droite, et espace pour sauter. La direction du personnage se fait à la souris. 
+        Pour éliminer une cible, vous devez d'abord passer en mode verouillage (par défaut : clic molette), pour mettre en surbrillance 
+        votre cible. Utilisez le clic droit pour la verouiller, et le clic gauche pour l'éliminer lorssqu'elle se trouve à portée.
+
+
+    \paragraph{Tableau des scores}
+
+        Le tableau des scores est affichable avec la touche de tabulation (Tab). Celui-ci permet d’avoir le classement des joueurs selon 
+        leur score actuel. Chaque ligne est de la forme :[Nom du joueur] [Score] [Assassinats / morts].
+
+\subsection{Pouvoirs}
+
+    Le jeu propose différents pouvoirs, séléctionnables à chaque mort et utilisables en jeu grâce à la touche [E] par défaut. 
+    Voici la liste des pouvoirs et leur description :
+
+    \paragraph{Bombe de fumée}
+
+        La bombe de fumée est, comme son nom tend à l'indiquer, un objet qui active des particules autour d'un joueur lui 
+        permettant de créer une confusion afin de se retirer ou d'attaquer discrètement. Son grand intérêt réside dans le fait 
+        qu'elle paralyse tous les personnages, NPC comme joueurs (sauf le lanceur, bien évidemment) jusqu'à dissipation de la fumée. 
+        C'est donc un atout majeur de fuite plus que d'attaque.
+
+    \paragraph{Poison}
+
+        Le poison n'est pas vraiment un atout en jeu, car il nécéssite de suivre sa victime et de la tuer comme pour une 
+        élimination classique. Cependant, lors de l'élimination de la cible, cette dernière donne plus de points, car son 
+        élimination est discrète.
+
+    \paragraph{Lancer de couteaux}
+
+        Le pouvoir du lancer de couteaux est de loin celui ayant été le plus long à mettre en oeuvre. Lorsque l'assassin 
+        verrouille sa cible, il peut lui lancer un couteau jusqu'à 15 mètres (contre 2 mètres pour les attaques classiques).
+        La cible touchée se met à boiter, voit sa vitesse réduite et ne peut ni courir, ni emprunter d'échelles pendant une certaine 
+        période donnant à son assaillant le temps de l'achever. 
+
+    \paragraph{Sprint}
+	
+        Le pouvoir de sprint permet au joueur de se déplacer très rapidement et d'être invulnérable face aux attaques 
+        au couteau. En revanche, le joueur ne peut pas emprunter d'échelles ou de tyroliennes en même temps que ce pouvoir, afin 
+        de ne pas déséquilibrer le jeu. Il laisse également une longue traînée de fumée derrière lui, qui lui fait perdre 
+        tout semblant de discrétion. 
+
     
+\subsection{Personnages non-joueurs}
 
-\paragraph{Contrôles}
-
-    Les contrôles de jeu, modifiables depuis le menu paramètres, sont par défaut Z/Q/S/D pour 
-    avancer/gauche/reculer/droite, et espace pour sauter. La direction du personnage se fait à la souris. 
-    Pour éliminer une cible, vous devez d'abord passer en mode verouillage (par défaut : clic molette), pour mettre en surbrillance 
-    votre cible. Utilisez le clic droit pour la verouiller, et le clic gauche pour l'éliminer lorssqu'elle se trouve à portée.
-
-
-\paragraph{Système de points}
-
-    Les points sont calculés en fonction de vos assassinats : tuer sa cible rapporte des points, l'empoisonner en rapporte plus, 
-    mais tuer un personnage non-joueur en fait perdre, et tuer la cible de quelqu'un d'autre fait gagner des points à cette personne. 
-    A la fin de la partie, les trois premiers joueurs sont affichés, ainsi qu'un tableau des scores.
+        Les personnages non-joueurs (PNJ, ou NPC en anglais pour Non-playable Characters) sont des personnages contrôlés par une intelligence 
+        artificielle. Ils se répartissent et se déplacent aléatoirement sur la carte, permettant au joueur de se déplacer discrètement sur la carte au milieu des 
+        autres personnages.
     
